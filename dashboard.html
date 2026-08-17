@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#4b171d">
+
+    <title>
+        Shri Dwarkadhishji Ni Haveli | Chopda
+    </title>
+
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(214, 170, 92, 0.13),
+                    transparent 35%
+                ),
+                #f5ecdc;
+
+            color: #4b171d;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================================================
+           TOP DEVOTIONAL BAR
+        ========================================================= */
+
+        .devotional-bar {
+
+            text-align: center;
+
+            padding: 11px 20px;
+
+            background: #4b171d;
+
+            color: #f3d69b;
+
+            font-family:
+                "Noto Serif Devanagari",
+                "Mangal",
+                serif;
+
+            font-size: 0.92rem;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(250, 244, 231, 0.96);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom:
+                1px solid rgba(139, 90, 43, 0.2);
+        }
+
+
+        .nav {
+
+            width: min(1250px, 94%);
+
+            margin: auto;
+
+            min-height: 82px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+
+        /* =========================================================
+           BRAND
+        ========================================================= */
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            text-decoration: none;
+
+            color: #4b171d;
+
+            min-width: max-content;
+        }
+
+
+        .brand img {
+
+            width: 56px;
+
+            height: 56px;
+
+            object-fit: contain;
+        }
+
+
+        .brand-text {
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .brand-title {
+
+            font-size: 1.15rem;
+
+            font-weight: 600;
+
+            line-height: 1.2;
+        }
+
+
+        .brand-location {
+
+            font-size: 0.72rem;
+
+            letter-spacing: 1.5px;
+
+            color: #84623b;
+
+            margin-top: 3px;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        .navigation {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 27px;
+        }
+
+
+        .navigation a {
+
+            text-decoration: none;
+
+            color: #5c3928;
+
+            font-size: 0.88rem;
+
+            position: relative;
+
+            transition: 0.25s ease;
+        }
+
+
+        .navigation a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -7px;
+
+            width: 0;
+
+            height: 1px;
+
+            background: #9c6c31;
+
+            transition: 0.25s ease;
+        }
+
+
+        .navigation a:hover {
+
+            color: #7c2630;
+        }
+
+
+        .navigation a:hover::after {
+
+            width: 100%;
+        }
+
+
+        .language {
+
+            border:
+
+                1px solid rgba(139, 90, 43, 0.35);
+
+            background: transparent;
+
+            padding: 8px 12px;
+
+            border-radius: 4px;
+
+            color: #5c3928;
+
+            font-family: inherit;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+
+            min-height: 72vh;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            padding: 70px 20px;
+        }
+
+
+        /* Pichwai-inspired botanical layers */
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            opacity: 0.15;
+
+            background:
+
+                radial-gradient(
+                    ellipse at 15% 50%,
+                    #477454 0 7%,
+                    transparent 8%
+                ),
+
+                radial-gradient(
+                    ellipse at 85% 45%,
+                    #477454 0 7%,
+                    transparent 8%
+                ),
+
+                radial-gradient(
+                    circle at 50% 100%,
+                    #8e2531 0 8%,
+                    transparent 9%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .hero-inner {
+
+            width: min(850px, 94%);
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .hero-eyebrow {
+
+            font-family:
+                "Noto Serif Devanagari",
+                "Mangal",
+                serif;
+
+            font-size: 1rem;
+
+            color: #8a622e;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(2.5rem, 6vw, 5rem);
+
+            line-height: 1.1;
+
+            font-weight: 500;
+
+            margin-bottom: 18px;
+        }
+
+
+        .hero h1 span {
+
+            display: block;
+
+            color: #7c2630;
+        }
+
+
+        .hero-description {
+
+            max-width: 650px;
+
+            margin: 0 auto 35px;
+
+            color: #70553b;
+
+            font-size: 1.05rem;
+        }
+
+
+        .hero-button {
+
+            display: inline-block;
+
+            padding: 13px 30px;
+
+            background: #7c2630;
+
+            color: #fff7e8;
+
+            text-decoration: none;
+
+            border-radius: 3px;
+
+            font-size: 0.9rem;
+
+            letter-spacing: 0.5px;
+
+            box-shadow:
+                0 8px 20px rgba(76, 23, 29, 0.18);
+
+            transition: 0.25s ease;
+        }
+
+
+        .hero-button:hover {
+
+            background: #5c1720;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           SECTION
+        ========================================================= */
+
+        .section {
+
+            width: min(1180px, 92%);
+
+            margin: auto;
+
+            padding: 80px 0;
+        }
+
+
+        .section-heading {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+
+        .section-heading small {
+
+            display: block;
+
+            color: #9a6b32;
+
+            font-size: 0.78rem;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 8px;
+        }
+
+
+        .section-heading h2 {
+
+            font-size:
+                clamp(2rem, 4vw, 3rem);
+
+            font-weight: 500;
+        }
+
+
+        .section-heading p {
+
+            margin-top: 10px;
+
+            color: #795c40;
+        }
+
+
+        /* =========================================================
+           DARSHAN
+        ========================================================= */
+
+        .darshan-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .darshan-card {
+
+            position: relative;
+
+            padding: 28px 22px;
+
+            text-align: center;
+
+            background: #fbf5e9;
+
+            border:
+                1px solid rgba(139, 90, 43, 0.22);
+
+            box-shadow:
+                0 10px 30px rgba(70, 35, 20, 0.06);
+
+            overflow: hidden;
+        }
+
+
+        .darshan-card::before {
+
+            content: "✦";
+
+            position: absolute;
+
+            top: 9px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: #b88a45;
+
+            font-size: 0.7rem;
+        }
+
+
+        .darshan-name {
+
+            margin-top: 8px;
+
+            color: #7c2630;
+
+            font-size: 1.15rem;
+
+            font-weight: 600;
+        }
+
+
+        .darshan-time {
+
+            margin-top: 5px;
+
+            color: #6f563b;
+
+            font-size: 0.95rem;
+        }
+
+
+        .darshan-note {
+
+            text-align: center;
+
+            margin-top: 22px;
+
+            color: #896e50;
+
+            font-size: 0.82rem;
+        }
+
+
+        /* =========================================================
+           THREE MAIN DESTINATIONS
+        ========================================================= */
+
+        .destination-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .destination {
+
+            min-height: 245px;
+
+            padding: 35px 28px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-end;
+
+            text-decoration: none;
+
+            color: #fff;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: #5a262a;
+
+            border-radius: 2px;
+
+            transition: 0.3s ease;
+        }
+
+
+        .destination:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 18px 35px rgba(67, 35, 20, 0.15);
+        }
+
+
+        .destination::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            opacity: 0.45;
+
+            background:
+
+                radial-gradient(
+                    circle at 30% 30%,
+                    #759b6b 0 7%,
+                    transparent 8%
+                ),
+
+                radial-gradient(
+                    circle at 75% 25%,
+                    #c49353 0 5%,
+                    transparent 6%
+                ),
+
+                radial-gradient(
+                    circle at 55% 80%,
+                    #b94e5a 0 8%,
+                    transparent 9%
+                );
+        }
+
+
+        .destination-content {
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .destination small {
+
+            color: #e7c98f;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        .destination h3 {
+
+            margin-top: 6px;
+
+            font-size: 1.65rem;
+
+            font-weight: 500;
+        }
+
+
+        .destination p {
+
+            margin-top: 7px;
+
+            color: #f0dfc4;
+
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================================================
+           RECONSTRUCTION
+        ========================================================= */
+
+        .reconstruction {
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                #4b171d;
+
+            color: #fff3dd;
+
+            padding: 70px 50px;
+
+            text-align: center;
+        }
+
+
+        .reconstruction::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 15px;
+
+            border:
+                1px solid rgba(224, 190, 121, 0.35);
+
+            pointer-events: none;
+        }
+
+
+        .reconstruction small {
+
+            color: #d8ad69;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        .reconstruction h2 {
+
+            font-size:
+                clamp(2rem, 4vw, 3.1rem);
+
+            font-weight: 500;
+
+            margin-top: 12px;
+        }
+
+
+        .reconstruction p {
+
+            max-width: 650px;
+
+            margin: 15px auto 28px;
+
+            color: #e6d2b4;
+        }
+
+
+        .reconstruction a {
+
+            display: inline-block;
+
+            padding: 12px 27px;
+
+            color: #4b171d;
+
+            background: #e0bd7c;
+
+            text-decoration: none;
+
+            border-radius: 3px;
+
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 55px 20px 35px;
+
+            border-top:
+                1px solid rgba(139, 90, 43, 0.18);
+        }
+
+
+        .footer-inscription {
+
+            font-family:
+                "Noto Serif Devanagari",
+                "Mangal",
+                serif;
+
+            color: #8b5a2b;
+
+            letter-spacing: 2px;
+
+            font-size: 1.05rem;
+
+            margin-bottom: 20px;
+        }
+
+
+        footer p {
+
+            color: #806346;
+
+            font-size: 0.82rem;
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 850px) {
+
+            .navigation {
+
+                display: none;
+            }
+
+
+            .nav {
+
+                min-height: 70px;
+            }
+
+
+            .brand-title {
+
+                font-size: 1rem;
+            }
+
+
+            .brand-location {
+
+                font-size: 0.62rem;
+            }
+
+
+            .darshan-grid,
+            .destination-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .hero {
+
+                min-height: 68vh;
+
+                padding:
+                    55px 15px;
+            }
+
+
+            .section {
+
+                padding: 60px 0;
+            }
+
+
+            .reconstruction {
+
+                padding:
+                    55px 25px;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+
+            .brand img {
+
+                width: 48px;
+                height: 48px;
+            }
+
+
+            .language {
+
+                padding: 6px 8px;
+
+                font-size: 0.75rem;
+            }
+
+
+            .hero h1 {
+
+                font-size: 2.45rem;
+            }
+
+
+            .hero-description {
+
+                font-size: 0.92rem;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         DEVOTIONAL IDENTITY
+    ========================================================= -->
+
+    <div class="devotional-bar">
+
+        || श्री द्वारकेशो जयति ||
+
+    </div>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
+
+    <header>
+
+        <nav class="nav">
+
+
+            <a href="dashboard.html"
+               class="brand">
+
+                <img
+                    src="assets/haveli-logo.png"
+                    alt="Shri Dwarkadhishji Ni Haveli"
+                >
+
+                <span class="brand-text">
+
+                    <span class="brand-title">
+                        Shri Dwarkadhishji Ni Haveli
+                    </span>
+
+                    <span class="brand-location">
+                        CHOPDA
+                    </span>
+
+                </span>
+
+            </a>
+
+
+            <div class="navigation">
+
+                <a href="dashboard.html">
+                    Home
+                </a>
+
+                <a href="#">
+                    Darshan
+                </a>
+
+                <a href="#">
+                    Seva &amp; Manorath
+                </a>
+
+                <a href="#">
+                    Reconstruction
+                </a>
+
+                <a href="#">
+                    Our Haveli
+                </a>
+
+            </div>
+
+
+            <select class="language"
+                    aria-label="Language">
+
+                <option>English</option>
+
+                <option>हिन्दी</option>
+
+                <option>ગુજરાતી — देवनागरी</option>
+
+                <option>ગુજરાતી</option>
+
+            </select>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-inner">
+
+
+                <div class="hero-eyebrow">
+
+                    श्री द्वारकाधीशजी नी हवेली
+
+                </div>
+
+
+                <h1>
+
+                    A Place of
+
+                    <span>
+                        Seva, Darshan &amp; Pushti
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Welcome to Shri Dwarkadhishji Ni Haveli,
+                    Chopda — a sacred space of devotion,
+                    Seva and the eternal grace of Thakurji.
+
+                </p>
+
+
+                <a href="#darshan"
+                   class="hero-button">
+
+                    Today's Darshan
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DARSHAN
+        ====================================================== -->
+
+        <section class="section"
+                 id="darshan">
+
+
+            <div class="section-heading">
+
+                <small>
+                    Today at the Haveli
+                </small>
+
+                <h2>
+                    Darshan
+                </h2>
+
+                <p>
+                    The day's principal Darshan timings
+                </p>
+
+            </div>
+
+
+            <div class="darshan-grid">
+
+
+                <article class="darshan-card">
+
+                    <div class="darshan-name">
+                        Mangla
+                    </div>
+
+                    <div class="darshan-time">
+                        8:00 AM – 9:00 AM
+                    </div>
+
+                </article>
+
+
+                <article class="darshan-card">
+
+                    <div class="darshan-name">
+                        Shringar
+                    </div>
+
+                    <div class="darshan-time">
+                        10:00 AM – 10:30 AM
+                    </div>
+
+                </article>
+
+
+                <article class="darshan-card">
+
+                    <div class="darshan-name">
+                        Rajbhog
+                    </div>
+
+                    <div class="darshan-time">
+                        11:00 AM – 11:30 AM
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <p class="darshan-note">
+
+                Darshan timings may vary according to the
+                day's Seva and rituals.
+
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             MAIN DESTINATIONS
+        ====================================================== -->
+
+        <section class="section">
+
+
+            <div class="section-heading">
+
+                <small>
+                    Explore the Haveli
+                </small>
+
+                <h2>
+                    Seva, Darshan &amp; Our Journey
+                </h2>
+
+            </div>
+
+
+            <div class="destination-grid">
+
+
+                <a href="#"
+                   class="destination">
+
+                    <div class="destination-content">
+
+                        <small>
+                            Darshan
+                        </small>
+
+                        <h3>
+                            Daily Darshan
+                        </h3>
+
+                        <p>
+                            Know the Darshan timings
+                            and daily Seva rhythm.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <a href="#"
+                   class="destination">
+
+                    <div class="destination-content">
+
+                        <small>
+                            Seva
+                        </small>
+
+                        <h3>
+                            Seva &amp; Manorath
+                        </h3>
+
+                        <p>
+                            Offer your Seva and participate
+                            in the Manorath traditions.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <a href="#"
+                   class="destination">
+
+                    <div class="destination-content">
+
+                        <small>
+                            Our Journey
+                        </small>
+
+                        <h3>
+                            Our Haveli
+                        </h3>
+
+                        <p>
+                            Discover the story and heritage
+                            of Shri Dwarkadhishji Ni Haveli.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             RECONSTRUCTION
+        ====================================================== -->
+
+        <section class="section">
+
+
+            <div class="reconstruction">
+
+
+                <small>
+                    Haveli Reconstruction
+                </small>
+
+
+                <h2>
+                    A Sacred Place,
+                    Rebuilt Through Seva.
+                </h2>
+
+
+                <p>
+
+                    The Haveli is being reconstructed with
+                    the collective Seva, devotion and
+                    support of Vaishnavs.
+
+                </p>
+
+
+                <a href="#">
+
+                    Know More
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+
+        <div class="footer-inscription">
+
+            || जय श्री कृष्ण ||
+
+        </div>
+
+
+        <p>
+
+            Shri Dwarkadhishji Ni Haveli<br>
+
+            Chopda, Jalgaon, Maharashtra, India
+
+        </p>
+
+
+    </footer>
+
+
+</body>
+
+</html>
