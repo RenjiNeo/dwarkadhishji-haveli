@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="theme-color" content="#4a171d">
+    <meta
+        name="theme-color"
+        content="#351116"
+    >
 
-    <title>Shri Dwarkadhishji Ni Haveli | Chopda</title>
+    <title>
+        Shri Dwarkadhishji Ni Haveli | Chopda
+    </title>
+
 
     <style>
 
-        /* =========================================================
+        /* =====================================================
            RESET
-        ========================================================= */
+        ===================================================== */
 
         * {
             margin: 0;
@@ -22,342 +32,338 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
         }
 
+
         body {
-            min-height: 100vh;
 
-            background:
-                radial-gradient(
-                    circle at 50% 30%,
-                    rgba(255, 241, 204, 0.65),
-                    transparent 42%
-                ),
-                #f4ead7;
+            overflow: hidden;
 
-            color: #4b171d;
+            background: #291015;
+
+            color: #fff5df;
 
             font-family:
                 Georgia,
                 "Times New Roman",
                 serif;
-
-            overflow-x: hidden;
         }
 
 
-        /* =========================================================
-           DECORATIVE BACKGROUND
-        ========================================================= */
-
-        body::before {
-            content: "";
-
-            position: fixed;
-            inset: 0;
-
-            pointer-events: none;
-
-            opacity: 0.18;
-
-            background-image:
-                radial-gradient(
-                    ellipse at center,
-                    transparent 0 55%,
-                    rgba(113, 77, 36, 0.12) 56%,
-                    transparent 57%
-                );
-
-            z-index: -1;
-        }
-
-
-        /* =========================================================
-           TOP DEVOTIONAL LINE
-        ========================================================= */
-
-        .top-inscription {
-            width: 100%;
-
-            text-align: center;
-
-            padding-top: 24px;
-
-            font-family:
-                "Noto Serif Devanagari",
-                "Mangal",
-                serif;
-
-            font-size: 1rem;
-
-            letter-spacing: 2px;
-
-            color: #8b5a2b;
-        }
-
-
-        .ornament {
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            gap: 14px;
-
-            margin-top: 8px;
-        }
-
-        .ornament::before,
-        .ornament::after {
-            content: "";
-
-            width: 70px;
-            height: 1px;
-
-            background:
-                linear-gradient(
-                    to right,
-                    transparent,
-                    #b58a49
-                );
-        }
-
-        .ornament::after {
-            background:
-                linear-gradient(
-                    to left,
-                    transparent,
-                    #b58a49
-                );
-        }
-
-
-        /* =========================================================
-           MAIN LANDING AREA
-        ========================================================= */
+        /* =====================================================
+           MAIN LANDING
+        ===================================================== */
 
         .landing {
-            min-height: calc(100vh - 70px);
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 30px 20px 50px;
-
-            position: relative;
-        }
-
-
-        /* =========================================================
-           PICHWAI FRAME
-        ========================================================= */
-
-        .haveli-frame {
-
-            width: min(1180px, 100%);
-
-            min-height: 78vh;
 
             position: relative;
 
-            display: flex;
+            width: 100%;
+            height: 100svh;
 
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
+            min-height: 620px;
 
             overflow: hidden;
 
-            border:
-                1px solid rgba(139, 90, 43, 0.45);
+            background: #291015;
+        }
+
+
+        /* =====================================================
+           PICHWAI BACKGROUND
+        ===================================================== */
+
+        .pichwai {
+
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            z-index: 1;
+
+            user-select: none;
+
+            pointer-events: none;
+
+            transform: scale(1.015);
+
+            transition:
+                opacity .8s ease;
+        }
+
+
+        /* =====================================================
+           ARTWORK OVERLAY
+
+           Kept subtle so the Pichwai remains visible.
+        ===================================================== */
+
+        .art-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 2;
+
+            pointer-events: none;
 
             background:
 
-                radial-gradient(
-                    circle at 50% 100%,
-                    rgba(46, 89, 60, 0.12),
-                    transparent 30%
-                ),
+                linear-gradient(
+                    180deg,
 
-                radial-gradient(
-                    circle at 15% 20%,
-                    rgba(107, 35, 42, 0.08),
-                    transparent 25%
-                ),
+                    rgba(20, 7, 10, .30) 0%,
 
-                #f8efdf;
+                    rgba(20, 7, 10, .04) 25%,
 
-            box-shadow:
-                0 20px 60px rgba(67, 35, 20, 0.12);
+                    rgba(20, 7, 10, .02) 58%,
 
+                    rgba(20, 7, 10, .34) 100%
+                );
         }
 
 
-        /* =========================================================
-           PICHWAI-STYLE BORDER
-        ========================================================= */
+        /* =====================================================
+           CENTRAL READABILITY
+        ===================================================== */
 
-        .haveli-frame::before {
-            content: "";
-
-            position: absolute;
-
-            inset: 14px;
-
-            border:
-                1px solid rgba(139, 90, 43, 0.45);
-
-            pointer-events: none;
-        }
-
-
-        .haveli-frame::after {
-            content: "";
-
-            position: absolute;
-
-            inset: 25px;
-
-            border:
-                1px solid rgba(181, 138, 73, 0.35);
-
-            pointer-events: none;
-        }
-
-
-        /* =========================================================
-           BOTANICAL DECORATION
-        ========================================================= */
-
-        .leaf {
-            position: absolute;
-
-            width: 150px;
-            height: 230px;
-
-            opacity: 0.8;
-
-            pointer-events: none;
-        }
-
-        .leaf.left {
-            left: -25px;
-            bottom: -30px;
-
-            transform: rotate(20deg);
-        }
-
-        .leaf.right {
-            right: -25px;
-            bottom: -30px;
-
-            transform:
-                scaleX(-1)
-                rotate(20deg);
-        }
-
-
-        .leaf::before {
-            content: "";
+        .central-glow {
 
             position: absolute;
 
             left: 50%;
+            top: 50%;
 
-            bottom: 0;
+            transform:
+                translate(-50%, -50%);
 
-            width: 3px;
-            height: 210px;
+            width: 55%;
+            height: 70%;
 
-            background: #356346;
+            z-index: 3;
 
-            transform: rotate(-12deg);
-
-            transform-origin: bottom;
-        }
-
-
-        .leaf::after {
-            content: "";
-
-            position: absolute;
-
-            left: 38px;
-            bottom: 65px;
-
-            width: 85px;
-            height: 140px;
+            pointer-events: none;
 
             background:
 
                 radial-gradient(
-                    ellipse at 30% 20%,
-                    #5b865c 0 18%,
-                    transparent 19%
-                ),
+                    ellipse,
 
-                radial-gradient(
-                    ellipse at 60% 35%,
-                    #4d7953 0 18%,
-                    transparent 19%
-                ),
+                    rgba(255,247,225,.16) 0%,
 
-                radial-gradient(
-                    ellipse at 40% 55%,
-                    #668f61 0 18%,
-                    transparent 19%
-                ),
+                    rgba(255,247,225,.07) 38%,
 
-                radial-gradient(
-                    ellipse at 70% 70%,
-                    #4d7953 0 18%,
-                    transparent 19%
+                    transparent 72%
                 );
 
+            filter:
+                blur(14px);
+        }
+
+
+        /* =====================================================
+           HAVELI FRAME
+        ===================================================== */
+
+        .frame {
+
+            position: absolute;
+
+            inset: 17px;
+
+            z-index: 40;
+
+            pointer-events: none;
+
+            border:
+                1px solid
+                rgba(237,207,139,.82);
+        }
+
+
+        .frame::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 7px;
+
+            border:
+                1px solid
+                rgba(237,207,139,.42);
+        }
+
+
+        .frame::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 13px;
+
+            border:
+                1px solid
+                rgba(237,207,139,.18);
+        }
+
+
+        /* =====================================================
+           TOP MANTRA
+        ===================================================== */
+
+        .top-mantra {
+
+            position: absolute;
+
+            left: 50%;
+            top: 25px;
+
             transform:
-                rotate(-25deg)
-                skewY(-10deg);
+                translateX(-50%);
 
-            opacity: 0.75;
+            z-index: 50;
+
+            color: #f3d58f;
+
+            font-family:
+                "Noto Serif Devanagari",
+                "Nirmala UI",
+                "Mangal",
+                serif;
+
+            font-size:
+                clamp(
+                    .82rem,
+                    1.15vw,
+                    1.08rem
+                );
+
+            font-weight: 500;
+
+            letter-spacing: 2px;
+
+            white-space: nowrap;
+
+            text-shadow:
+                0 2px 8px
+                rgba(0,0,0,.85);
         }
 
 
-        /* =========================================================
-           CENTRAL CONTENT
-        ========================================================= */
+        /* =====================================================
+           MUSIC BUTTON
+        ===================================================== */
 
-        .content {
+        .music-button {
 
-            width: min(720px, 90%);
+            position: absolute;
 
-            position: relative;
+            right: 30px;
+            top: 25px;
 
-            z-index: 5;
+            z-index: 70;
 
-            padding: 50px 20px;
-        }
-
-
-        /* =========================================================
-           LOGO
-        ========================================================= */
-
-        .logo-wrapper {
+            width: 44px;
+            height: 44px;
 
             display: flex;
 
+            align-items: center;
             justify-content: center;
 
-            margin-bottom: 25px;
+            border:
+                1px solid
+                rgba(237,207,139,.9);
+
+            border-radius: 50%;
+
+            background:
+                rgba(42,12,17,.82);
+
+            color: #f3d58f;
+
+            cursor: pointer;
+
+            font-size: 17px;
+
+            backdrop-filter:
+                blur(5px);
+
+            box-shadow:
+                0 5px 18px
+                rgba(0,0,0,.35);
+
+            transition:
+                .25s ease;
         }
+
+
+        .music-button:hover {
+
+            transform:
+                scale(1.06);
+
+            background:
+                rgba(70,20,28,.92);
+        }
+
+
+        /* =====================================================
+           CENTRAL IDENTITY
+        ===================================================== */
+
+        .identity {
+
+            position: absolute;
+
+            left: 50%;
+            top: 52%;
+
+            transform:
+                translate(-50%, -50%);
+
+            z-index: 20;
+
+            width:
+                min(650px, 50vw);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           OFFICIAL LOGO
+        ===================================================== */
 
         .logo {
 
-            width: clamp(130px, 17vw, 205px);
+            width:
+                clamp(
+                    155px,
+                    16vw,
+                    235px
+                );
 
             height: auto;
 
@@ -367,434 +373,1945 @@
 
             filter:
                 drop-shadow(
-                    0 8px 12px rgba(70, 30, 20, 0.15)
+                    0 8px 18px
+                    rgba(0,0,0,.48)
                 );
         }
 
 
-        /* =========================================================
-           TITLE
-        ========================================================= */
+        /* =====================================================
+           SWAROOP AREA
+        ===================================================== */
 
-        .title {
+        .swaroop-area {
 
-            font-size:
-                clamp(2.2rem, 5vw, 4.3rem);
+            display: flex;
 
-            line-height: 1.15;
+            justify-content: center;
 
-            font-weight: 600;
+            align-items: flex-start;
 
-            letter-spacing: 0.5px;
+            gap:
+                clamp(
+                    35px,
+                    5vw,
+                    75px
+                );
 
-            color: #4b171d;
-
-            margin-bottom: 14px;
+            margin-top: 30px;
         }
 
 
-        .subtitle {
+        /* =====================================================
+           SWAROOP WRAPPER
+        ===================================================== */
 
-            font-size:
-                clamp(1.05rem, 2vw, 1.35rem);
+        .swaroop-wrapper {
 
-            letter-spacing: 3px;
+            display: flex;
 
-            text-transform: uppercase;
+            flex-direction: column;
 
-            color: #7b5a35;
-
-            margin-bottom: 24px;
-        }
-
-
-        /* =========================================================
-           LOCATION
-        ========================================================= */
-
-        .location {
-
-            font-family:
-                "Noto Serif Devanagari",
-                "Mangal",
-                Georgia,
-                serif;
-
-            font-size: 1.05rem;
-
-            color: #72502e;
-
-            letter-spacing: 1px;
-        }
-
-
-        /* =========================================================
-           LOTUS
-        ========================================================= */
-
-        .lotus {
-
-            margin: 35px auto 28px;
-
-            width: 90px;
-
-            height: 35px;
+            align-items: center;
 
             position: relative;
         }
 
-        .lotus::before,
-        .lotus::after {
 
-            content: "❧";
+        /* =====================================================
+           SWAROOP FRAME
+        ===================================================== */
+
+        .swaroop-frame {
+
+            position: relative;
+
+            width:
+                clamp(
+                    82px,
+                    8vw,
+                    112px
+                );
+
+            height:
+                clamp(
+                    116px,
+                    12vw,
+                    150px
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                rgba(250,241,220,.96);
+
+            border:
+                1px solid
+                rgba(180,132,63,.95);
+
+            padding: 7px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(25,5,8,.38);
+
+            overflow: hidden;
+        }
+
+
+        .swaroop-frame::before {
+
+            content: "";
 
             position: absolute;
 
-            top: 0;
+            inset: 5px;
 
-            font-size: 26px;
+            border:
+                1px solid
+                rgba(83,44,21,.35);
 
-            color: #8c2633;
+            pointer-events: none;
+
+            z-index: 10;
         }
 
-        .lotus::before {
-            left: 5px;
+
+        /* =====================================================
+           TWO IMAGE LAYERS
+
+           This is the important slideshow fix.
+        ===================================================== */
+
+        .swaroop-image {
+
+            position: absolute;
+
+            inset: 7px;
+
+            width:
+                calc(100% - 14px);
+
+            height:
+                calc(100% - 14px);
+
+            object-fit: contain;
+
+            opacity: 0;
+
+            transition:
+                opacity .7s ease;
+        }
+
+
+        .swaroop-image.active {
+
+            opacity: 1;
+        }
+
+
+        /* =====================================================
+           SWAROOP NAME
+        ===================================================== */
+
+        .swaroop-name {
+
+            margin-top: 11px;
+
+            color: #fff2d0;
+
+            font-size:
+                clamp(
+                    .52rem,
+                    .7vw,
+                    .68rem
+                );
+
+            letter-spacing: 1.2px;
+
+            white-space: nowrap;
+
+            text-shadow:
+                0 2px 7px
+                rgba(0,0,0,.85);
+        }
+
+
+        /* =====================================================
+           HAVELI TITLE
+        ===================================================== */
+
+        .haveli-title {
+
+            margin-top: 32px;
+
+            color: #fff7e4;
+
+            font-size:
+                clamp(
+                    1.55rem,
+                    2.7vw,
+                    2.65rem
+                );
+
+            font-weight: 500;
+
+            line-height: 1.1;
+
+            white-space: nowrap;
+
+            text-shadow:
+                0 3px 16px
+                rgba(0,0,0,.9);
+        }
+
+
+        /* =====================================================
+           CHOPDA
+        ===================================================== */
+
+        .location {
+
+            margin-top: 12px;
+
+            color: #f2d28a;
+
+            font-size:
+                clamp(
+                    .72rem,
+                    1vw,
+                    .92rem
+                );
+
+            letter-spacing: 6px;
+
+            font-weight: 600;
+
+            text-transform: uppercase;
+
+            text-shadow:
+                0 2px 9px
+                rgba(0,0,0,.9);
+        }
+
+
+        /* =====================================================
+           FULL LOCATION
+        ===================================================== */
+
+        .full-location {
+
+            margin-top: 7px;
+
+            color:
+                rgba(255,244,220,.94);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                clamp(
+                    .55rem,
+                    .7vw,
+                    .68rem
+                );
+
+            letter-spacing: 1.4px;
+
+            text-shadow:
+                0 2px 8px
+                rgba(0,0,0,.9);
+        }
+
+
+        /* =====================================================
+           ENTER BUTTON
+        ===================================================== */
+
+        .enter {
+
+            margin-top: 25px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-width: 225px;
+
+            padding:
+                13px 30px;
+
+            color: #f8e2ae;
+
+            background:
+                rgba(56,14,21,.90);
+
+            border:
+                1px solid
+                rgba(238,207,139,.92);
+
+            text-decoration: none;
+
+            font-size: .74rem;
+
+            font-weight: 500;
+
+            letter-spacing: 2.2px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(20,4,7,.42);
+
+            transition:
+                .3s ease;
+
+            backdrop-filter:
+                blur(4px);
+        }
+
+
+        .enter::before {
+
+            content: "✦";
+
+            margin-right: 12px;
+
+            color: #e5c27a;
+        }
+
+
+        .enter::after {
+
+            content: "✦";
+
+            margin-left: 12px;
+
+            color: #e5c27a;
+        }
+
+
+        .enter:hover {
+
+            background:
+                rgba(91,24,34,.96);
 
             transform:
-                rotate(-35deg);
+                translateY(-2px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(20,4,7,.55);
         }
 
-        .lotus::after {
-            right: 5px;
 
-            transform:
-                scaleX(-1)
-                rotate(-35deg);
-        }
+        /* =====================================================
+           BOTTOM MANTRA
+        ===================================================== */
 
-        .lotus-center {
-
-            width: 24px;
-            height: 14px;
+        .bottom-mantra {
 
             position: absolute;
 
             left: 50%;
-            top: 9px;
+            bottom: 23px;
 
-            transform: translateX(-50%);
+            transform:
+                translateX(-50%);
 
-            border-radius:
-                50% 50% 45% 45%;
+            z-index: 50;
 
-            background: #b55c64;
-        }
-
-
-        /* =========================================================
-           BOTTOM INSCRIPTION
-        ========================================================= */
-
-        .bottom-inscription {
-
-            margin-top: 42px;
+            color: #f3d58f;
 
             font-family:
                 "Noto Serif Devanagari",
+                "Nirmala UI",
                 "Mangal",
                 serif;
 
-            font-size: 1.1rem;
+            font-size:
+                clamp(
+                    .72rem,
+                    .9vw,
+                    .86rem
+                );
 
             letter-spacing: 2px;
 
-            color: #8b5a2b;
+            white-space: nowrap;
+
+            text-shadow:
+                0 2px 9px
+                rgba(0,0,0,.9);
         }
 
 
-        /* =========================================================
-           SUBTLE PEACOCK FEATHERS
-        ========================================================= */
+        /* =====================================================
+           CLICK TO ENTER SCREEN
+        ===================================================== */
 
-        .feather {
+        .enter-screen {
 
-            position: absolute;
+            position: fixed;
 
-            width: 95px;
-            height: 210px;
+            inset: 0;
 
-            opacity: 0.35;
+            z-index: 1000;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            cursor: pointer;
+
+            background:
+                rgba(27,8,12,.22);
+
+            backdrop-filter:
+                blur(2px);
+
+            transition:
+                opacity 1s ease,
+                visibility 1s ease;
+        }
+
+
+        .enter-screen.hidden {
+
+            opacity: 0;
+
+            visibility: hidden;
 
             pointer-events: none;
         }
 
-        .feather.left {
-            left: 7%;
-            top: 18%;
 
-            transform: rotate(-25deg);
+        /* =====================================================
+           ENTER SCREEN CONTENT
+        ===================================================== */
+
+        .enter-content {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding:
+                35px 50px;
+
+            color: #f4d38d;
+
+            text-shadow:
+                0 3px 12px
+                rgba(0,0,0,.9);
         }
 
-        .feather.right {
-            right: 7%;
-            top: 18%;
 
-            transform:
-                scaleX(-1)
-                rotate(-25deg);
+        .enter-symbol {
+
+            color: #e3bf73;
+
+            font-size: 18px;
+
+            margin: 15px 0;
         }
 
 
-        .feather::before {
+        .enter-mantra {
 
-            content: "";
+            font-family:
+                "Noto Serif Devanagari",
+                "Nirmala UI",
+                "Mangal",
+                serif;
 
-            position: absolute;
-
-            bottom: 0;
-            left: 50%;
-
-            width: 3px;
-            height: 150px;
-
-            background: #52715b;
-
-            transform: rotate(12deg);
-        }
-
-        .feather::after {
-
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-            left: 12px;
-
-            width: 68px;
-            height: 68px;
-
-            border-radius: 50%;
-
-            background:
-
-                radial-gradient(
-                    circle,
-                    #4e8268 0 13%,
-                    #1c5261 14% 29%,
-                    #c48b37 30% 39%,
-                    #6b3340 40% 48%,
-                    transparent 49%
+            font-size:
+                clamp(
+                    1rem,
+                    1.6vw,
+                    1.35rem
                 );
 
-            box-shadow:
-                0 0 0 8px rgba(72, 116, 81, 0.12);
+            letter-spacing: 2px;
+
+            margin-bottom: 35px;
         }
 
 
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
+        .enter-text {
+
+            color: #fff4d8;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    .75rem,
+                    1vw,
+                    .95rem
+                );
+
+            letter-spacing: 4px;
+
+            animation:
+                enterPulse
+                2.2s
+                ease-in-out
+                infinite;
+        }
+
+
+        .enter-subtext {
+
+            margin-top: 15px;
+
+            color:
+                rgba(247,226,181,.85);
+
+            font-family:
+                "Noto Serif Devanagari",
+                "Nirmala UI",
+                "Mangal",
+                serif;
+
+            font-size: .75rem;
+        }
+
+
+        @keyframes enterPulse {
+
+            0%,
+            100% {
+                opacity: .55;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
 
         @media (max-width: 700px) {
 
-            .top-inscription {
-                padding-top: 18px;
+            .pichwai {
 
-                font-size: 0.9rem;
+                content:
+                    url(
+                        "assets/Indexpichwai-mobile.webp.webp"
+                    );
 
-                letter-spacing: 1px;
+                object-position: center;
             }
 
-            .landing {
-                padding:
-                    15px
-                    12px
-                    30px;
+
+            .identity {
+
+                width: 84vw;
+
+                top: 51%;
             }
 
-            .haveli-frame {
-                min-height: 82vh;
+
+            .logo {
+
+                width: 135px;
             }
 
-            .haveli-frame::before {
-                inset: 9px;
+
+            .swaroop-area {
+
+                margin-top: 24px;
+
+                gap: 24px;
             }
 
-            .haveli-frame::after {
-                inset: 17px;
+
+            .swaroop-frame {
+
+                width: 68px;
+
+                height: 94px;
+
+                padding: 4px;
             }
 
-            .content {
-                padding:
-                    45px 15px;
+
+            .swaroop-image {
+
+                inset: 4px;
+
+                width:
+                    calc(100% - 8px);
+
+                height:
+                    calc(100% - 8px);
             }
 
-            .title {
-                font-size: 2.35rem;
+
+            .swaroop-name {
+
+                margin-top: 8px;
+
+                font-size: .46rem;
             }
 
-            .subtitle {
-                font-size: 0.85rem;
 
-                letter-spacing: 2px;
+            .haveli-title {
+
+                margin-top: 27px;
+
+                font-size: 1.30rem;
+
+                white-space: normal;
             }
+
 
             .location {
-                font-size: 0.9rem;
+
+                margin-top: 9px;
+
+                font-size: .61rem;
+
+                letter-spacing: 4px;
             }
 
-            .leaf {
-                transform:
-                    scale(0.7)
-                    rotate(15deg);
+
+            .full-location {
+
+                display: none;
             }
 
-            .leaf.right {
-                transform:
-                    scaleX(-1)
-                    scale(0.7)
-                    rotate(15deg);
+
+            .enter {
+
+                margin-top: 20px;
+
+                min-width: 185px;
+
+                padding:
+                    11px 20px;
+
+                font-size: .63rem;
             }
 
-            .feather {
-                opacity: 0.18;
 
-                transform:
-                    scale(0.7)
-                    rotate(-20deg);
+            .top-mantra {
+
+                top: 15px;
+
+                font-size: .68rem;
+
+                letter-spacing: 1.5px;
             }
 
-            .feather.right {
-                transform:
-                    scaleX(-1)
-                    scale(0.7)
-                    rotate(-20deg);
+
+            .bottom-mantra {
+
+                bottom: 13px;
+
+                font-size: .62rem;
             }
 
-            .bottom-inscription {
-                font-size: 0.95rem;
+
+            .music-button {
+
+                top: 13px;
+
+                right: 13px;
+
+                width: 37px;
+
+                height: 37px;
+            }
+
+
+            .frame {
+
+                inset: 8px;
+            }
+
+
+            .enter-content {
+
+                padding: 25px;
+            }
+
+
+            .enter-mantra {
+
+                font-size: .85rem;
+
+                margin-bottom: 28px;
+            }
+
+
+            .enter-text {
+
+                font-size: .65rem;
+
+                letter-spacing: 3px;
+            }
+
+
+            .enter-subtext {
+
+                font-size: .65rem;
             }
         }
 
 
-        /* =========================================================
-           REDUCED MOTION
-        ========================================================= */
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
 
-        @media (prefers-reduced-motion: reduce) {
+        @media (max-width: 390px) {
 
-            html {
-                scroll-behavior: auto;
+            .identity {
+
+                width: 88vw;
+            }
+
+
+            .logo {
+
+                width: 115px;
+            }
+
+
+            .swaroop-area {
+
+                margin-top: 19px;
+
+                gap: 18px;
+            }
+
+
+            .swaroop-frame {
+
+                width: 58px;
+
+                height: 81px;
+            }
+
+
+            .swaroop-name {
+
+                display: none;
+            }
+
+
+            .haveli-title {
+
+                margin-top: 22px;
+
+                font-size: 1.15rem;
+            }
+
+
+            .enter {
+
+                min-width: 165px;
+
+                padding:
+                    10px 15px;
             }
         }
+	/* =========================================================
+   FINAL LANDING PAGE SPACING FIX
+   DO NOT DELETE EXISTING CSS
+   THIS OVERRIDES THE OLD POSITIONING
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. TOP MANTRA
+   Keep it clearly ABOVE the logo
+--------------------------------------------------------- */
+
+.top-mantra {
+
+    top: 22px;
+
+    z-index: 100;
+
+    font-size: clamp(
+        .85rem,
+        1.15vw,
+        1.08rem
+    );
+
+    letter-spacing: 2.5px;
+
+}
+
+
+/* ---------------------------------------------------------
+   2. CENTRAL IDENTITY
+   Move the entire content slightly upward
+--------------------------------------------------------- */
+
+.identity {
+
+    top: 47%;
+
+    width: min(620px, 48vw);
+
+}
+
+
+/* ---------------------------------------------------------
+   3. LOGO
+   Slightly smaller so it does not dominate everything
+--------------------------------------------------------- */
+
+.logo {
+
+    width: clamp(
+        150px,
+        14vw,
+        205px
+    );
+
+    margin-top: 8px;
+
+}
+
+
+/* ---------------------------------------------------------
+   4. SWAROOPS
+   Bring them closer to logo
+--------------------------------------------------------- */
+
+.swaroop-area {
+
+    margin-top: 18px;
+
+    gap: clamp(
+        28px,
+        4vw,
+        55px
+    );
+
+}
+
+
+/* ---------------------------------------------------------
+   5. SWAROOP FRAMES
+   Keep them elegant but not oversized
+--------------------------------------------------------- */
+
+.swaroop-frame {
+
+    width: clamp(
+        78px,
+        7.5vw,
+        105px
+    );
+
+    height: clamp(
+        108px,
+        10.5vw,
+        140px
+    );
+
+}
+
+
+/* ---------------------------------------------------------
+   6. SWAROOP NAMES
+--------------------------------------------------------- */
+
+.swaroop-name {
+
+    margin-top: 8px;
+
+    font-size: .62rem;
+
+}
+
+
+/* ---------------------------------------------------------
+   7. HAVELI TITLE
+   Bring title upward
+--------------------------------------------------------- */
+
+.haveli-title {
+
+    margin-top: 22px;
+
+    font-size: clamp(
+        1.55rem,
+        2.5vw,
+        2.45rem
+    );
+
+}
+
+
+/* ---------------------------------------------------------
+   8. CHOPDA
+--------------------------------------------------------- */
+
+.location {
+
+    margin-top: 8px;
+
+    font-size: .82rem;
+
+    letter-spacing: 5px;
+
+}
+
+
+/* ---------------------------------------------------------
+   9. FULL LOCATION
+--------------------------------------------------------- */
+
+.full-location {
+
+    margin-top: 5px;
+
+    font-size: .65rem;
+
+}
+
+
+/* ---------------------------------------------------------
+   10. ENTER BUTTON
+   Move it closer to the location
+--------------------------------------------------------- */
+
+.enter {
+
+    margin-top: 17px;
+
+    min-width: 215px;
+
+    padding: 12px 27px;
+
+}
+
+
+/* ---------------------------------------------------------
+   11. BOTTOM MANTRA
+   Give it its own safe area
+--------------------------------------------------------- */
+
+.bottom-mantra {
+
+    bottom: 18px;
+
+    z-index: 100;
+
+}
+
+
+/* =========================================================
+   DESKTOP — EXTRA LARGE SCREENS
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .identity {
+
+        top: 46%;
+
+    }
+
+    .logo {
+
+        width: 200px;
+
+    }
+
+    .swaroop-area {
+
+        margin-top: 17px;
+
+        gap: 48px;
+
+    }
+
+    .swaroop-frame {
+
+        width: 100px;
+
+        height: 135px;
+
+    }
+
+    .haveli-title {
+
+        margin-top: 20px;
+
+        font-size: 2.35rem;
+
+    }
+
+    .enter {
+
+        margin-top: 16px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .top-mantra {
+
+        top: 15px;
+
+        font-size: .68rem;
+
+    }
+
+
+    .identity {
+
+        top: 48%;
+
+        width: 86vw;
+
+    }
+
+
+    .logo {
+
+        width: 125px;
+
+        margin-top: 8px;
+
+    }
+
+
+    .swaroop-area {
+
+        margin-top: 17px;
+
+        gap: 20px;
+
+    }
+
+
+    .swaroop-frame {
+
+        width: 63px;
+
+        height: 88px;
+
+    }
+
+
+    .swaroop-name {
+
+        margin-top: 6px;
+
+        font-size: .43rem;
+
+    }
+
+
+    .haveli-title {
+
+        margin-top: 20px;
+
+        font-size: 1.25rem;
+
+    }
+
+
+    .location {
+
+        margin-top: 7px;
+
+        font-size: .58rem;
+
+        letter-spacing: 3.5px;
+
+    }
+
+
+    .full-location {
+
+        display: none;
+
+    }
+
+
+    .enter {
+
+        margin-top: 15px;
+
+        min-width: 175px;
+
+        padding: 10px 18px;
+
+        font-size: .60rem;
+
+    }
+
+
+    .bottom-mantra {
+
+        bottom: 11px;
+
+        font-size: .60rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .identity {
+
+        top: 48%;
+
+    }
+
+
+    .logo {
+
+        width: 110px;
+
+    }
+
+
+    .swaroop-area {
+
+        margin-top: 14px;
+
+        gap: 16px;
+
+    }
+
+
+    .swaroop-frame {
+
+        width: 55px;
+
+        height: 78px;
+
+    }
+
+
+    .swaroop-name {
+
+        display: none;
+
+    }
+
+
+    .haveli-title {
+
+        margin-top: 17px;
+
+        font-size: 1.08rem;
+
+    }
+
+
+    .enter {
+
+        margin-top: 13px;
+
+        min-width: 160px;
+
+        padding: 9px 14px;
+
+    }
+
+}
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- =========================================================
-         TOP DEVOTIONAL INSCRIPTION
-    ========================================================= -->
+<main class="landing">
 
-    <div class="top-inscription">
 
+    <!-- =====================================================
+         PICHWAI BACKGROUND
+    ===================================================== -->
+
+    <img
+        id="pichwai"
+        class="pichwai"
+        src="assets/Indexpichwai-desktop.webp.webp"
+        alt=""
+        aria-hidden="true"
+    >
+
+
+    <!-- =====================================================
+         VISUAL OVERLAY
+    ===================================================== -->
+
+    <div class="art-overlay"></div>
+
+    <div class="central-glow"></div>
+
+    <div class="frame"></div>
+
+
+    <!-- =====================================================
+         TOP MANTRA
+    ===================================================== -->
+
+    <div class="top-mantra">
         || श्री द्वारकेशो जयति ||
-
-        <div class="ornament"></div>
-
     </div>
 
 
-    <!-- =========================================================
-         LANDING PAGE
-    ========================================================= -->
+    <!-- =====================================================
+         MUSIC BUTTON
+    ===================================================== -->
 
-    <main class="landing">
-
-        <section class="haveli-frame">
-
-
-            <!-- Decorative botanical elements -->
-
-            <div class="leaf left"></div>
-
-            <div class="leaf right"></div>
+    <button
+        id="musicButton"
+        class="music-button"
+        aria-label="Play or pause devotional music"
+        title="Play / Pause"
+    >
+        ♫
+    </button>
 
 
-            <!-- Decorative peacock-feather elements -->
+    <!-- =====================================================
+         MAIN IDENTITY
+    ===================================================== -->
 
-            <div class="feather left"></div>
-
-            <div class="feather right"></div>
-
-
-            <!-- Central identity -->
-
-            <div class="content">
+    <section class="identity">
 
 
-                <!-- OFFICIAL LOGO -->
+        <!-- =================================================
+             OFFICIAL HAVElI LOGO
+        ================================================= -->
 
-                <div class="logo-wrapper">
+        <img
+            src="assets/haveli-logo.png"
+            class="logo"
+            alt="Shri Dwarkadhishji Ni Haveli"
+        >
+
+
+        <!-- =================================================
+             SWAROOPS
+        ================================================= -->
+
+        <div class="swaroop-area">
+
+
+            <!-- =============================================
+                 DWARKADHISHJI
+            ============================================== -->
+
+            <div class="swaroop-wrapper">
+
+                <div class="swaroop-frame">
+
+                    <!-- Two layers for reliable crossfade -->
 
                     <img
-                        src="assets/haveli-logo.png"
-                        alt="Shri Dwarkadhishji Ni Haveli"
-                        class="logo"
+                        id="dwarkadhishA"
+                        class="swaroop-image active"
+                        src="assets/Dwarkadhish/1.jpeg"
+                        alt="Shri Dwarkadhishji"
+                    >
+
+                    <img
+                        id="dwarkadhishB"
+                        class="swaroop-image"
+                        src="assets/Dwarkadhish/2.jpeg"
+                        alt=""
+                        aria-hidden="true"
                     >
 
                 </div>
 
 
-                <!-- HAVELI NAME -->
-
-                <h1 class="title">
-                    Shri Dwarkadhishji Ni Haveli
-                </h1>
-
-
-                <!-- IDENTITY -->
-
-                <p class="subtitle">
-                    Chopda
-                </p>
-
-
-                <!-- Decorative lotus -->
-
-                <div class="lotus">
-                    <div class="lotus-center"></div>
-                </div>
-
-
-                <!-- LOCATION -->
-
-                <p class="location">
-                    Chopda, Jalgaon, Maharashtra, India
-                </p>
-
-		<a href="dashboard.html" class="enter-button">
-    		    Enter the Haveli
-		</a>
-
-                <!-- BOTTOM DEVOTIONAL INSCRIPTION -->
-
-                <div class="bottom-inscription">
-
-                    || जय श्री कृष्ण ||
-
+                <div class="swaroop-name">
+                    Shri Dwarkadhishji
                 </div>
 
             </div>
 
-        </section>
 
-    </main>
+            <!-- =============================================
+                 BALKRISHNALALJI
+            ============================================== -->
+
+            <div class="swaroop-wrapper">
+
+                <div class="swaroop-frame">
+
+                    <!-- Two layers for reliable crossfade -->
+
+                    <img
+                        id="balkrishnalalA"
+                        class="swaroop-image active"
+                        src="assets/Balkrishnalal/1.jpeg"
+                        alt="Shri Balkrishnalalji"
+                    >
+
+                    <img
+                        id="balkrishnalalB"
+                        class="swaroop-image"
+                        src="assets/Balkrishnalal/2.jpeg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+
+                </div>
+
+
+                <div class="swaroop-name">
+                    Shri Balkrishnalalji
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             HAVELI NAME
+        ================================================= -->
+
+        <h1 class="haveli-title">
+            Shri Dwarkadhishji Ni Haveli
+        </h1>
+
+
+        <!-- =================================================
+             CITY
+        ================================================= -->
+
+        <div class="location">
+            CHOPDA
+        </div>
+
+
+        <!-- =================================================
+             FULL LOCATION
+        ================================================= -->
+
+        <div class="full-location">
+            Chopda, Jalgaon, Maharashtra, India
+        </div>
+
+
+        <!-- =================================================
+             ENTER HAVELI
+        ================================================= -->
+
+        <a
+            href="dashboard.html"
+            class="enter"
+        >
+            ENTER THE HAVELI
+        </a>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         BOTTOM MANTRA
+    ===================================================== -->
+
+    <div class="bottom-mantra">
+        || जय श्री कृष्ण ||
+    </div>
+
+
+    <!-- =====================================================
+         AUDIO
+    ===================================================== -->
+
+    <audio
+        id="haveliMusic"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="assets/haveli-aarti.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+</main>
+
+
+<!-- =========================================================
+     CLICK ANYWHERE TO ENTER
+
+     This sits above the entire website.
+     The first click:
+       1. Starts music
+       2. Starts slideshow
+       3. Removes this screen
+========================================================= -->
+
+<div
+    id="enterScreen"
+    class="enter-screen"
+>
+
+    <div class="enter-content">
+
+
+        <div class="enter-symbol">
+            ✦
+        </div>
+
+
+        <div class="enter-mantra">
+            || श्री द्वारकेशो जयति ||
+        </div>
+
+
+        <div class="enter-text">
+            CLICK ANYWHERE TO ENTER
+        </div>
+
+
+        <div class="enter-subtext">
+            श्री द्वारकाधीशजी नी हवेली
+        </div>
+
+
+        <div class="enter-symbol">
+            ✦
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script>
+
+
+    /* =========================================================
+       RESPONSIVE PICHWAI
+    ========================================================= */
+
+    const pichwai =
+        document.getElementById("pichwai");
+
+
+    function updatePichwai() {
+
+        if (window.innerWidth <= 700) {
+
+            pichwai.src =
+                "assets/Indexpichwai-mobile.webp.webp";
+
+        } else {
+
+            pichwai.src =
+                "assets/Indexpichwai-desktop.webp.webp";
+
+        }
+
+    }
+
+
+    updatePichwai();
+
+
+    window.addEventListener(
+        "resize",
+        updatePichwai
+    );
+
+
+    /* =========================================================
+       SWAROOP IMAGE LISTS
+    ========================================================= */
+
+    const dwarkadhishImages = [
+
+        "assets/Dwarkadhish/1.jpeg",
+        "assets/Dwarkadhish/2.jpeg",
+        "assets/Dwarkadhish/3.jpeg",
+        "assets/Dwarkadhish/4.jpeg",
+        "assets/Dwarkadhish/5.jpeg",
+        "assets/Dwarkadhish/6.jpeg",
+        "assets/Dwarkadhish/7.jpeg",
+        "assets/Dwarkadhish/8.jpeg"
+
+    ];
+
+
+    const balkrishnalalImages = [
+
+        "assets/Balkrishnalal/1.jpeg",
+        "assets/Balkrishnalal/2.jpeg",
+        "assets/Balkrishnalal/3.jpeg",
+        "assets/Balkrishnalal/4.jpeg"
+
+    ];
+
+
+    /* =========================================================
+       PRELOAD IMAGES
+
+       This ensures all images are available before
+       the slideshow needs them.
+    ========================================================= */
+
+    function preloadImages(images) {
+
+        images.forEach(
+            function(src) {
+
+                const image =
+                    new Image();
+
+                image.src =
+                    src;
+
+            }
+        );
+
+    }
+
+
+    preloadImages(
+        dwarkadhishImages
+    );
+
+
+    preloadImages(
+        balkrishnalalImages
+    );
+
+
+    /* =========================================================
+       SWAROOP SLIDESHOW ELEMENTS
+    ========================================================= */
+
+    const dwarkadhishA =
+        document.getElementById(
+            "dwarkadhishA"
+        );
+
+
+    const dwarkadhishB =
+        document.getElementById(
+            "dwarkadhishB"
+        );
+
+
+    const balkrishnalalA =
+        document.getElementById(
+            "balkrishnalalA"
+        );
+
+
+    const balkrishnalalB =
+        document.getElementById(
+            "balkrishnalalB"
+        );
+
+
+    /* =========================================================
+       SLIDESHOW STATE
+    ========================================================= */
+
+    let dwarkadhishIndex = 0;
+
+    let balkrishnalalIndex = 0;
+
+
+    let dwarkadhishShowingA = true;
+
+    let balkrishnalalShowingA = true;
+
+
+    let slideshowStarted = false;
+
+
+    /* =========================================================
+       DWARKADHISHJI NEXT IMAGE
+    ========================================================= */
+
+    function nextDwarkadhish() {
+
+        dwarkadhishIndex++;
+
+        if (
+            dwarkadhishIndex >=
+            dwarkadhishImages.length
+        ) {
+
+            dwarkadhishIndex = 0;
+
+        }
+
+
+        const nextImage =
+            dwarkadhishImages[
+                dwarkadhishIndex
+            ];
+
+
+        if (dwarkadhishShowingA) {
+
+            /*
+             * B receives the next image
+             */
+
+            dwarkadhishB.src =
+                nextImage;
+
+
+            /*
+             * Fade B in
+             */
+
+            dwarkadhishB.classList.add(
+                "active"
+            );
+
+
+            /*
+             * Fade A out
+             */
+
+            dwarkadhishA.classList.remove(
+                "active"
+            );
+
+
+        } else {
+
+            /*
+             * A receives the next image
+             */
+
+            dwarkadhishA.src =
+                nextImage;
+
+
+            /*
+             * Fade A in
+             */
+
+            dwarkadhishA.classList.add(
+                "active"
+            );
+
+
+            /*
+             * Fade B out
+             */
+
+            dwarkadhishB.classList.remove(
+                "active"
+            );
+
+        }
+
+
+        dwarkadhishShowingA =
+            !dwarkadhishShowingA;
+
+    }
+
+
+    /* =========================================================
+       BALKRISHNALALJI NEXT IMAGE
+    ========================================================= */
+
+    function nextBalkrishnalal() {
+
+        balkrishnalalIndex++;
+
+        if (
+            balkrishnalalIndex >=
+            balkrishnalalImages.length
+        ) {
+
+            balkrishnalalIndex = 0;
+
+        }
+
+
+        const nextImage =
+            balkrishnalalImages[
+                balkrishnalalIndex
+            ];
+
+
+        if (balkrishnalalShowingA) {
+
+            balkrishnalalB.src =
+                nextImage;
+
+
+            balkrishnalalB.classList.add(
+                "active"
+            );
+
+
+            balkrishnalalA.classList.remove(
+                "active"
+            );
+
+
+        } else {
+
+            balkrishnalalA.src =
+                nextImage;
+
+
+            balkrishnalalA.classList.add(
+                "active"
+            );
+
+
+            balkrishnalalB.classList.remove(
+                "active"
+            );
+
+        }
+
+
+        balkrishnalalShowingA =
+            !balkrishnalalShowingA;
+
+    }
+
+
+    /* =========================================================
+       START SLIDESHOW
+    ========================================================= */
+
+    function startSwaroopSlideshows() {
+
+        if (slideshowStarted) {
+
+            return;
+
+        }
+
+
+        slideshowStarted = true;
+
+
+        /*
+         * First image remains visible for 4 seconds.
+         */
+
+        setInterval(
+            nextDwarkadhish,
+            4000
+        );
+
+
+        setInterval(
+            nextBalkrishnalal,
+            4000
+        );
+
+    }
+
+
+    /* =========================================================
+       AUDIO
+    ========================================================= */
+
+    const music =
+        document.getElementById(
+            "haveliMusic"
+        );
+
+
+    const musicButton =
+        document.getElementById(
+            "musicButton"
+        );
+
+
+    let musicPlaying = false;
+
+
+    /* =========================================================
+       START MUSIC
+    ========================================================= */
+
+    async function startMusic() {
+
+        try {
+
+            music.volume = 0.55;
+
+            await music.play();
+
+            musicPlaying = true;
+
+            musicButton.textContent =
+                "❚❚";
+
+        }
+
+        catch (error) {
+
+            console.log(
+                "Audio playback failed:",
+                error
+            );
+
+        }
+
+    }
+
+
+    /* =========================================================
+       CLICK ANYWHERE TO ENTER
+    ========================================================= */
+
+    const enterScreen =
+        document.getElementById(
+            "enterScreen"
+        );
+
+
+    let entered = false;
+
+
+    enterScreen.addEventListener(
+        "click",
+        async function() {
+
+            /*
+             * Prevent multiple clicks
+             */
+
+            if (entered) {
+
+                return;
+
+            }
+
+
+            entered = true;
+
+
+            /*
+             * IMPORTANT:
+             *
+             * This click is a genuine user gesture.
+             * Therefore the browser allows the
+             * audio to start here.
+             */
+
+            await startMusic();
+
+
+            /*
+             * Start the Swaroop slideshows
+             */
+
+            startSwaroopSlideshows();
+
+
+            /*
+             * Fade out the entrance screen
+             */
+
+            enterScreen.classList.add(
+                "hidden"
+            );
+
+        }
+    );
+
+
+    /* =========================================================
+       MUSIC BUTTON
+    ========================================================= */
+
+    musicButton.addEventListener(
+        "click",
+        async function(event) {
+
+            /*
+             * Do not let the music button's click
+             * interact with the entrance screen.
+             */
+
+            event.stopPropagation();
+
+
+            if (music.paused) {
+
+                await startMusic();
+
+            }
+
+            else {
+
+                music.pause();
+
+                musicPlaying = false;
+
+                musicButton.textContent =
+                    "♫";
+
+            }
+
+        }
+    );
+
+
+</script>
 
 
 </body>
+
 </html>
