@@ -6,59 +6,792 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Shri Dwarkadhishji Ni Haveli</title>
+    <meta name="theme-color" content="#4a171d">
+
+    <title>Shri Dwarkadhishji Ni Haveli | Chopda</title>
 
     <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            margin: 0;
             min-height: 100vh;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background:
+                radial-gradient(
+                    circle at 50% 30%,
+                    rgba(255, 241, 204, 0.65),
+                    transparent 42%
+                ),
+                #f4ead7;
 
-            font-family: Georgia, "Times New Roman", serif;
+            color: #4b171d;
 
-            background: #f7f1e5;
-            color: #4b1720;
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            overflow-x: hidden;
         }
 
-        .welcome {
+
+        /* =========================================================
+           DECORATIVE BACKGROUND
+        ========================================================= */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+            inset: 0;
+
+            pointer-events: none;
+
+            opacity: 0.18;
+
+            background-image:
+                radial-gradient(
+                    ellipse at center,
+                    transparent 0 55%,
+                    rgba(113, 77, 36, 0.12) 56%,
+                    transparent 57%
+                );
+
+            z-index: -1;
+        }
+
+
+        /* =========================================================
+           TOP DEVOTIONAL LINE
+        ========================================================= */
+
+        .top-inscription {
+            width: 100%;
+
             text-align: center;
+
+            padding-top: 24px;
+
+            font-family:
+                "Noto Serif Devanagari",
+                "Mangal",
+                serif;
+
+            font-size: 1rem;
+
+            letter-spacing: 2px;
+
+            color: #8b5a2b;
         }
 
-        .welcome h1 {
-            margin: 0;
 
-            font-size: clamp(2rem, 5vw, 4rem);
+        .ornament {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 14px;
+
+            margin-top: 8px;
+        }
+
+        .ornament::before,
+        .ornament::after {
+            content: "";
+
+            width: 70px;
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    to right,
+                    transparent,
+                    #b58a49
+                );
+        }
+
+        .ornament::after {
+            background:
+                linear-gradient(
+                    to left,
+                    transparent,
+                    #b58a49
+                );
+        }
+
+
+        /* =========================================================
+           MAIN LANDING AREA
+        ========================================================= */
+
+        .landing {
+            min-height: calc(100vh - 70px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px 20px 50px;
+
+            position: relative;
+        }
+
+
+        /* =========================================================
+           PICHWAI FRAME
+        ========================================================= */
+
+        .haveli-frame {
+
+            width: min(1180px, 100%);
+
+            min-height: 78vh;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            border:
+                1px solid rgba(139, 90, 43, 0.45);
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(46, 89, 60, 0.12),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(107, 35, 42, 0.08),
+                    transparent 25%
+                ),
+
+                #f8efdf;
+
+            box-shadow:
+                0 20px 60px rgba(67, 35, 20, 0.12);
+
+        }
+
+
+        /* =========================================================
+           PICHWAI-STYLE BORDER
+        ========================================================= */
+
+        .haveli-frame::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 14px;
+
+            border:
+                1px solid rgba(139, 90, 43, 0.45);
+
+            pointer-events: none;
+        }
+
+
+        .haveli-frame::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 25px;
+
+            border:
+                1px solid rgba(181, 138, 73, 0.35);
+
+            pointer-events: none;
+        }
+
+
+        /* =========================================================
+           BOTANICAL DECORATION
+        ========================================================= */
+
+        .leaf {
+            position: absolute;
+
+            width: 150px;
+            height: 230px;
+
+            opacity: 0.8;
+
+            pointer-events: none;
+        }
+
+        .leaf.left {
+            left: -25px;
+            bottom: -30px;
+
+            transform: rotate(20deg);
+        }
+
+        .leaf.right {
+            right: -25px;
+            bottom: -30px;
+
+            transform:
+                scaleX(-1)
+                rotate(20deg);
+        }
+
+
+        .leaf::before {
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: 0;
+
+            width: 3px;
+            height: 210px;
+
+            background: #356346;
+
+            transform: rotate(-12deg);
+
+            transform-origin: bottom;
+        }
+
+
+        .leaf::after {
+            content: "";
+
+            position: absolute;
+
+            left: 38px;
+            bottom: 65px;
+
+            width: 85px;
+            height: 140px;
+
+            background:
+
+                radial-gradient(
+                    ellipse at 30% 20%,
+                    #5b865c 0 18%,
+                    transparent 19%
+                ),
+
+                radial-gradient(
+                    ellipse at 60% 35%,
+                    #4d7953 0 18%,
+                    transparent 19%
+                ),
+
+                radial-gradient(
+                    ellipse at 40% 55%,
+                    #668f61 0 18%,
+                    transparent 19%
+                ),
+
+                radial-gradient(
+                    ellipse at 70% 70%,
+                    #4d7953 0 18%,
+                    transparent 19%
+                );
+
+            transform:
+                rotate(-25deg)
+                skewY(-10deg);
+
+            opacity: 0.75;
+        }
+
+
+        /* =========================================================
+           CENTRAL CONTENT
+        ========================================================= */
+
+        .content {
+
+            width: min(720px, 90%);
+
+            position: relative;
+
+            z-index: 5;
+
+            padding: 50px 20px;
+        }
+
+
+        /* =========================================================
+           LOGO
+        ========================================================= */
+
+        .logo-wrapper {
+
+            display: flex;
+
+            justify-content: center;
+
+            margin-bottom: 25px;
+        }
+
+        .logo {
+
+            width: clamp(130px, 17vw, 205px);
+
+            height: auto;
+
+            display: block;
+
+            object-fit: contain;
+
+            filter:
+                drop-shadow(
+                    0 8px 12px rgba(70, 30, 20, 0.15)
+                );
+        }
+
+
+        /* =========================================================
+           TITLE
+        ========================================================= */
+
+        .title {
+
+            font-size:
+                clamp(2.2rem, 5vw, 4.3rem);
+
+            line-height: 1.15;
+
             font-weight: 600;
+
+            letter-spacing: 0.5px;
+
+            color: #4b171d;
+
+            margin-bottom: 14px;
+        }
+
+
+        .subtitle {
+
+            font-size:
+                clamp(1.05rem, 2vw, 1.35rem);
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color: #7b5a35;
+
+            margin-bottom: 24px;
+        }
+
+
+        /* =========================================================
+           LOCATION
+        ========================================================= */
+
+        .location {
+
+            font-family:
+                "Noto Serif Devanagari",
+                "Mangal",
+                Georgia,
+                serif;
+
+            font-size: 1.05rem;
+
+            color: #72502e;
+
             letter-spacing: 1px;
         }
 
-        .welcome p {
-            margin-top: 14px;
 
-            font-size: clamp(1rem, 2vw, 1.3rem);
+        /* =========================================================
+           LOTUS
+        ========================================================= */
+
+        .lotus {
+
+            margin: 35px auto 28px;
+
+            width: 90px;
+
+            height: 35px;
+
+            position: relative;
+        }
+
+        .lotus::before,
+        .lotus::after {
+
+            content: "❧";
+
+            position: absolute;
+
+            top: 0;
+
+            font-size: 26px;
+
+            color: #8c2633;
+        }
+
+        .lotus::before {
+            left: 5px;
+
+            transform:
+                rotate(-35deg);
+        }
+
+        .lotus::after {
+            right: 5px;
+
+            transform:
+                scaleX(-1)
+                rotate(-35deg);
+        }
+
+        .lotus-center {
+
+            width: 24px;
+            height: 14px;
+
+            position: absolute;
+
+            left: 50%;
+            top: 9px;
+
+            transform: translateX(-50%);
+
+            border-radius:
+                50% 50% 45% 45%;
+
+            background: #b55c64;
+        }
+
+
+        /* =========================================================
+           BOTTOM INSCRIPTION
+        ========================================================= */
+
+        .bottom-inscription {
+
+            margin-top: 42px;
+
+            font-family:
+                "Noto Serif Devanagari",
+                "Mangal",
+                serif;
+
+            font-size: 1.1rem;
+
             letter-spacing: 2px;
 
-            color: #806044;
+            color: #8b5a2b;
         }
+
+
+        /* =========================================================
+           SUBTLE PEACOCK FEATHERS
+        ========================================================= */
+
+        .feather {
+
+            position: absolute;
+
+            width: 95px;
+            height: 210px;
+
+            opacity: 0.35;
+
+            pointer-events: none;
+        }
+
+        .feather.left {
+            left: 7%;
+            top: 18%;
+
+            transform: rotate(-25deg);
+        }
+
+        .feather.right {
+            right: 7%;
+            top: 18%;
+
+            transform:
+                scaleX(-1)
+                rotate(-25deg);
+        }
+
+
+        .feather::before {
+
+            content: "";
+
+            position: absolute;
+
+            bottom: 0;
+            left: 50%;
+
+            width: 3px;
+            height: 150px;
+
+            background: #52715b;
+
+            transform: rotate(12deg);
+        }
+
+        .feather::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 12px;
+
+            width: 68px;
+            height: 68px;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    #4e8268 0 13%,
+                    #1c5261 14% 29%,
+                    #c48b37 30% 39%,
+                    #6b3340 40% 48%,
+                    transparent 49%
+                );
+
+            box-shadow:
+                0 0 0 8px rgba(72, 116, 81, 0.12);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .top-inscription {
+                padding-top: 18px;
+
+                font-size: 0.9rem;
+
+                letter-spacing: 1px;
+            }
+
+            .landing {
+                padding:
+                    15px
+                    12px
+                    30px;
+            }
+
+            .haveli-frame {
+                min-height: 82vh;
+            }
+
+            .haveli-frame::before {
+                inset: 9px;
+            }
+
+            .haveli-frame::after {
+                inset: 17px;
+            }
+
+            .content {
+                padding:
+                    45px 15px;
+            }
+
+            .title {
+                font-size: 2.35rem;
+            }
+
+            .subtitle {
+                font-size: 0.85rem;
+
+                letter-spacing: 2px;
+            }
+
+            .location {
+                font-size: 0.9rem;
+            }
+
+            .leaf {
+                transform:
+                    scale(0.7)
+                    rotate(15deg);
+            }
+
+            .leaf.right {
+                transform:
+                    scaleX(-1)
+                    scale(0.7)
+                    rotate(15deg);
+            }
+
+            .feather {
+                opacity: 0.18;
+
+                transform:
+                    scale(0.7)
+                    rotate(-20deg);
+            }
+
+            .feather.right {
+                transform:
+                    scaleX(-1)
+                    scale(0.7)
+                    rotate(-20deg);
+            }
+
+            .bottom-inscription {
+                font-size: 0.95rem;
+            }
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <main class="welcome">
 
-        <h1>Shri Dwarkadhishji Ni Haveli</h1>
+    <!-- =========================================================
+         TOP DEVOTIONAL INSCRIPTION
+    ========================================================= -->
 
-        <p>Chopda, Jalgaon, Maharashtra</p>
+    <div class="top-inscription">
+
+        || श्री द्वारकेशो जयति ||
+
+        <div class="ornament"></div>
+
+    </div>
+
+
+    <!-- =========================================================
+         LANDING PAGE
+    ========================================================= -->
+
+    <main class="landing">
+
+        <section class="haveli-frame">
+
+
+            <!-- Decorative botanical elements -->
+
+            <div class="leaf left"></div>
+
+            <div class="leaf right"></div>
+
+
+            <!-- Decorative peacock-feather elements -->
+
+            <div class="feather left"></div>
+
+            <div class="feather right"></div>
+
+
+            <!-- Central identity -->
+
+            <div class="content">
+
+
+                <!-- OFFICIAL LOGO -->
+
+                <div class="logo-wrapper">
+
+                    <img
+                        src="assets/haveli-logo.png"
+                        alt="Shri Dwarkadhishji Ni Haveli"
+                        class="logo"
+                    >
+
+                </div>
+
+
+                <!-- HAVELI NAME -->
+
+                <h1 class="title">
+                    Shri Dwarkadhishji Ni Haveli
+                </h1>
+
+
+                <!-- IDENTITY -->
+
+                <p class="subtitle">
+                    Chopda
+                </p>
+
+
+                <!-- Decorative lotus -->
+
+                <div class="lotus">
+                    <div class="lotus-center"></div>
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <p class="location">
+                    Chopda, Jalgaon, Maharashtra, India
+                </p>
+
+
+                <!-- BOTTOM DEVOTIONAL INSCRIPTION -->
+
+                <div class="bottom-inscription">
+
+                    || जय श्री कृष्ण ||
+
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
+
 
 </body>
 </html>
