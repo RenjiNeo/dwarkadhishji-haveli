@@ -1,1457 +1,2679 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#42131d">
+
+<title>Darshan | Shri Dwarkadhishji Ni Haveli</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4ecd9;
+    color:#39251d;
+    font-family:Georgia,"Times New Roman",serif;
+    overflow-x:hidden;
+}
+
+:root{
+    --ivory:#f4ecd9;
+    --cream:#fffaf0;
+    --cream2:#f7eedb;
+    --maroon:#641d29;
+    --deep-maroon:#42131d;
+    --green:#315846;
+    --peacock:#174c61;
+    --blue:#173c5b;
+    --gold:#b48a45;
+    --light-gold:#e3c27a;
+    --brown:#563b29;
+    --muted:#786650;
+    --line:rgba(128,91,42,.28);
+}
+
+
+/* =========================================================
+   TOP DEVOTIONAL BAR
+========================================================= */
+
+.top-strip{
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--deep-maroon);
+    color:var(--light-gold);
+    font-family:"Noto Serif Devanagari","Nirmala UI","Mangal",serif;
+    font-size:.82rem;
+    letter-spacing:2px;
+    border-bottom:1px solid rgba(227,194,122,.42);
+}
+
 
-    <meta charset="UTF-8">
+/* =========================================================
+   STICKY HAVELI NAVIGATION
+========================================================= */
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+.haveli-nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-    <meta
-        name="theme-color"
-        content="#42131d"
-    >
+    width:100%;
+    min-height:76px;
 
-    <title>
-        Darshan | Shri Dwarkadhishji Ni Haveli
-    </title>
+    display:flex;
+    align-items:center;
 
+    padding:8px 34px;
 
-    <style>
+    background:rgba(255,250,240,.97);
 
-        /* =====================================================
-           RESET
-        ===================================================== */
+    border-bottom:1px solid rgba(180,138,69,.42);
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    box-shadow:
+        0 6px 22px rgba(50,30,15,.13);
 
+    backdrop-filter:blur(12px);
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
 
+/* Brand */
 
-        body {
+.nav-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
 
-            background:
-                #f5edda;
+    color:var(--maroon);
+    text-decoration:none;
 
-            color:
-                #39251d;
+    min-width:300px;
+}
 
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
+.nav-brand img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
 
-            overflow-x:
-                hidden;
-        }
+    filter:
+        drop-shadow(
+            0 3px 7px rgba(0,0,0,.18)
+        );
+}
 
+.nav-brand-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.15;
+}
 
-        /* =====================================================
-           VARIABLES
-        ===================================================== */
+.nav-haveli-name{
+    color:var(--maroon);
+    font-size:.92rem;
+    font-weight:600;
+}
 
-        :root {
+.nav-location{
+    margin-top:5px;
 
-            --ivory: #f5edda;
-            --cream: #fffaf0;
-            --maroon: #641d29;
-            --deep-maroon: #42131d;
-            --green: #315846;
-            --peacock: #174c61;
-            --gold: #b48a45;
-            --light-gold: #e3c27a;
-            --brown: #563b29;
-            --muted: #786650;
-            --line: rgba(128, 91, 42, .28);
-        }
+    color:var(--gold);
 
+    font-family:Arial,sans-serif;
+    font-size:.46rem;
+    font-weight:700;
+    letter-spacing:3px;
+}
 
-        /* =====================================================
-           TOP BAR
-        ===================================================== */
 
-        .top-strip {
+/* Center page name */
 
-            height: 42px;
+.nav-page{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
 
-            display: flex;
+    color:var(--maroon);
 
-            align-items: center;
+    font-family:Arial,sans-serif;
+    font-size:.65rem;
+    font-weight:700;
+    letter-spacing:3px;
 
-            justify-content: center;
+    text-transform:uppercase;
+}
 
-            background:
-                var(--deep-maroon);
 
-            color:
-                var(--light-gold);
+/* Back */
 
-            font-family:
-                "Noto Serif Devanagari",
-                "Nirmala UI",
-                "Mangal",
-                serif;
+.nav-back{
+    margin-left:auto;
 
-            font-size: .78rem;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
-            letter-spacing: 2px;
+    padding:9px 17px;
 
-            border-bottom:
-                1px solid
-                rgba(227,194,122,.45);
-        }
+    color:var(--maroon);
+    background:rgba(180,138,69,.07);
 
+    border:1px solid rgba(180,138,69,.52);
 
-        /* =====================================================
-           HEADER
-        ===================================================== */
+    text-decoration:none;
 
-        .header {
+    font-family:Arial,sans-serif;
+    font-size:.58rem;
+    letter-spacing:.7px;
 
-            position: relative;
+    transition:.2s ease;
+}
 
-            min-height: 230px;
+.nav-back:hover{
+    background:var(--maroon);
+    color:#fff2d4;
+}
 
-            display: flex;
 
-            align-items: center;
+/* =========================================================
+   HERO
+========================================================= */
 
-            justify-content: center;
+.hero{
+    position:relative;
 
-            text-align: center;
+    height:clamp(330px,38vw,500px);
 
-            overflow: hidden;
+    overflow:hidden;
 
-            background:
-                #173c4d;
-        }
+    background:var(--peacock);
+}
 
+.hero-bg{
+    position:absolute;
+    inset:0;
 
-        .header-bg {
+    width:100%;
+    height:100%;
 
-            position: absolute;
+    object-fit:cover;
+    object-position:center;
 
-            inset: 0;
+    transform:scale(1.02);
+}
 
-            width: 100%;
+.hero-overlay{
+    position:absolute;
+    inset:0;
 
-            height: 100%;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(15,25,28,.10),
+            rgba(15,25,28,.18) 40%,
+            rgba(15,25,28,.78) 100%
+        );
+}
 
-            object-fit: cover;
+.hero-content{
+    position:relative;
+    z-index:5;
 
-            opacity: .65;
-        }
+    height:100%;
 
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 
-        .header-overlay {
+    text-align:center;
 
-            position: absolute;
+    color:#fff2d4;
 
-            inset: 0;
+    padding:35px 20px;
+}
 
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(20,30,32,.18),
-                    rgba(20,30,32,.72)
-                );
-        }
+.hero-logo{
+    width:clamp(95px,9vw,135px);
 
+    filter:
+        drop-shadow(
+            0 7px 17px rgba(0,0,0,.65)
+        );
+}
 
-        .header-content {
+.hero-title{
+    margin-top:16px;
 
-            position: relative;
+    font-size:
+        clamp(2rem,4vw,3.35rem);
 
-            z-index: 2;
+    font-weight:500;
 
-            color: #fff2d4;
+    text-shadow:
+        0 4px 17px rgba(0,0,0,.9);
+}
 
-            padding: 25px;
-        }
+.hero-location{
+    margin-top:11px;
 
+    color:var(--light-gold);
 
-        .header-logo {
+    font-family:Arial,sans-serif;
+    font-size:.65rem;
+    font-weight:700;
+    letter-spacing:5px;
 
-            width: 75px;
+    text-shadow:
+        0 3px 10px rgba(0,0,0,.85);
+}
 
-            filter:
-                drop-shadow(
-                    0 5px 13px
-                    rgba(0,0,0,.55)
-                );
-        }
+.hero-mantra{
+    margin-top:15px;
 
+    font-family:
+        "Noto Serif Devanagari",
+        "Nirmala UI",
+        "Mangal",
+        serif;
 
-        .header-title {
+    font-size:.76rem;
+    letter-spacing:2px;
 
-            margin-top: 10px;
+    color:rgba(255,242,211,.92);
+}
 
-            font-size:
-                clamp(
-                    1.35rem,
-                    3vw,
-                    2.3rem
-                );
 
-            font-weight: 500;
+/* =========================================================
+   DECORATIVE HERO LOTUS
+========================================================= */
 
-            text-shadow:
-                0 3px 14px
-                rgba(0,0,0,.8);
-        }
+.hero-lotus{
+    position:absolute;
+    bottom:-70px;
 
+    width:190px;
 
-        .header-location {
+    opacity:.68;
 
-            margin-top: 7px;
+    z-index:3;
 
-            font-family: Arial, sans-serif;
+    pointer-events:none;
+}
 
-            font-size: .62rem;
+.hero-lotus.left{
+    left:-45px;
+}
 
-            letter-spacing: 5px;
+.hero-lotus.right{
+    right:-45px;
+    transform:scaleX(-1);
+}
 
-            color: var(--light-gold);
-        }
 
+/* =========================================================
+   BORDER
+========================================================= */
 
-        /* =====================================================
-           BORDER
-        ===================================================== */
+.border-image{
+    width:100%;
+    height:44px;
 
-        .border-image {
+    display:block;
 
-            width: 100%;
+    object-fit:cover;
+}
 
-            height: 42px;
 
-            object-fit: cover;
+/* =========================================================
+   MAIN
+========================================================= */
 
-            display: block;
-        }
+.container{
+    width:min(1380px,93%);
 
+    margin:auto;
 
-        /* =====================================================
-           CONTENT
-        ===================================================== */
+    padding:
+        32px 0 70px;
+}
 
-        .container {
 
-            width:
-                min(
-                    1250px,
-                    92%
-                );
+/* =========================================================
+   INTRO
+========================================================= */
 
-            margin:
-                0 auto;
+.intro{
+    max-width:850px;
 
-            padding:
-                28px 0 60px;
-        }
+    margin:
+        0 auto 32px;
 
+    text-align:center;
+}
 
-        /* =====================================================
-           BACK BUTTON
-        ===================================================== */
+.intro h2{
+    color:var(--maroon);
 
-        .back {
+    font-size:
+        clamp(1.75rem,3vw,2.55rem);
 
-            display: inline-flex;
+    font-weight:500;
+}
 
-            align-items: center;
+.intro-divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-            gap: 7px;
+    gap:12px;
 
-            color:
-                var(--maroon);
+    margin:14px auto;
+}
 
-            text-decoration: none;
+.intro-divider::before,
+.intro-divider::after{
+    content:"";
 
-            font-family:
-                Arial,
-                sans-serif;
+    width:90px;
+    height:1px;
 
-            font-size: .7rem;
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            var(--gold)
+        );
+}
 
-            font-weight: 600;
+.intro-divider::after{
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            var(--gold)
+        );
+}
 
-            letter-spacing: .5px;
+.intro-divider span{
+    color:var(--gold);
+    font-size:.75rem;
+}
 
-            margin-bottom: 18px;
-        }
+.intro p{
+    color:var(--muted);
 
+    font-family:Arial,sans-serif;
 
-        .back:hover {
-            color: var(--gold);
-        }
+    font-size:.72rem;
 
+    line-height:1.7;
+}
 
-        /* =====================================================
-           PAGE INTRO
-        ===================================================== */
 
-        .intro {
+/* =========================================================
+   MAIN DARSHAN EXPERIENCE
+========================================================= */
 
-            text-align: center;
+.darshan-layout{
+    display:grid;
 
-            max-width: 750px;
+    grid-template-columns:
+        minmax(0,1.5fr)
+        minmax(330px,.75fr);
 
-            margin:
-                0 auto 30px;
-        }
+    gap:25px;
 
+    align-items:start;
+}
 
-        .intro h1 {
 
-            color:
-                var(--maroon);
+/* =========================================================
+   SWAROOP STAGE
+========================================================= */
 
-            font-size:
-                clamp(
-                    1.7rem,
-                    3vw,
-                    2.5rem
-                );
+.swaroop-stage{
+    position:relative;
 
-            font-weight: 500;
-        }
+    min-height:650px;
 
+    overflow:hidden;
 
-        .intro p {
+    background:
+        linear-gradient(
+            145deg,
+            #173e4c,
+            #234f4d
+        );
 
-            margin-top: 10px;
+    border:
+        1px solid
+        rgba(180,138,69,.48);
 
-            color:
-                var(--muted);
+    box-shadow:
+        0 14px 38px rgba(52,32,15,.16);
+}
 
-            font-family:
-                Arial,
-                sans-serif;
 
-            font-size: .74rem;
+/* Inner frame */
 
-            line-height: 1.7;
-        }
+.swaroop-stage::before{
+    content:"";
 
+    position:absolute;
 
-        /* =====================================================
-           TODAY CARD
-        ===================================================== */
+    inset:13px;
 
-        .today-card {
+    border:
+        1px solid
+        rgba(227,194,122,.46);
 
-            position: relative;
+    pointer-events:none;
 
-            padding: 28px;
+    z-index:8;
+}
 
-            background:
-                var(--cream);
+.swaroop-stage::after{
+    content:"";
 
-            border:
-                1px solid
-                var(--line);
+    position:absolute;
 
-            border-radius: 15px;
+    inset:20px;
 
-            box-shadow:
-                0 7px 25px
-                rgba(74,45,18,.09);
+    border:
+        1px solid
+        rgba(227,194,122,.18);
 
-            overflow: hidden;
-        }
+    pointer-events:none;
 
+    z-index:8;
+}
 
-        .today-card::after {
 
-            content: "";
+/* Pichwai background */
 
-            position: absolute;
+.stage-bg{
+    position:absolute;
+    inset:0;
 
-            width: 220px;
+    width:100%;
+    height:100%;
 
-            height: 220px;
+    object-fit:cover;
 
-            right: -70px;
+    opacity:.18;
 
-            bottom: -90px;
+    filter:saturate(.85);
+}
 
-            background-image:
-                url(
-                    "assets/lotus-1.png"
-                );
 
-            background-size: contain;
+/* Stage top title */
 
-            background-repeat: no-repeat;
+.stage-title{
+    position:absolute;
 
-            opacity: .08;
+    top:29px;
+    left:50%;
 
-            pointer-events: none;
-        }
+    transform:translateX(-50%);
 
+    z-index:12;
 
-        .today-title {
+    color:#f5d68f;
 
-            color:
-                var(--maroon);
+    font-family:Arial,sans-serif;
 
-            font-size: 1.3rem;
+    font-size:.62rem;
+    font-weight:700;
 
-            font-weight: 500;
-        }
+    letter-spacing:3px;
 
+    white-space:nowrap;
 
-        .today-date {
+    text-transform:uppercase;
+}
 
-            margin-top: 5px;
 
-            color:
-                var(--muted);
+/* Main image */
 
-            font-family:
-                Arial,
-                sans-serif;
+.main-swaroop{
+    position:absolute;
 
-            font-size: .67rem;
-        }
+    left:50%;
+    top:53%;
 
+    transform:
+        translate(-50%,-50%);
 
-        /* =====================================================
-           DARSHAN GRID
-        ===================================================== */
+    width:auto;
 
-        .darshan-grid {
+    height:
+        min(76%,560px);
 
-            margin-top: 22px;
+    max-width:70%;
 
-            display: grid;
+    object-fit:contain;
 
-            grid-template-columns:
-                repeat(
-                    2,
-                    1fr
-                );
+    z-index:5;
 
-            gap: 12px;
-        }
+    filter:
+        drop-shadow(
+            0 15px 28px rgba(0,0,0,.48)
+        );
 
+    transition:
+        opacity .28s ease,
+        transform .28s ease;
+}
 
-        .darshan-item {
 
-            position: relative;
+/* Image counter */
 
-            display: grid;
+.image-counter{
+    position:absolute;
 
-            grid-template-columns:
-                55px 1fr auto;
+    left:50%;
+    bottom:28px;
 
-            align-items: center;
+    transform:translateX(-50%);
 
-            gap: 15px;
+    z-index:15;
 
-            min-height: 90px;
+    padding:7px 15px;
 
-            padding: 13px 16px;
+    color:#f6d994;
 
-            background:
-                #f3ead6;
+    background:rgba(30,20,17,.70);
 
-            border:
-                1px solid
-                rgba(128,91,42,.18);
+    border:
+        1px solid
+        rgba(227,194,122,.42);
 
-            border-radius: 10px;
+    font-family:Arial,sans-serif;
 
-            transition:
-                transform .2s ease,
-                box-shadow .2s ease;
-        }
+    font-size:.55rem;
 
+    letter-spacing:2px;
 
-        .darshan-item:hover {
+    white-space:nowrap;
+}
 
-            transform:
-                translateY(-2px);
 
-            box-shadow:
-                0 6px 16px
-                rgba(74,45,18,.09);
-        }
+/* Navigation buttons */
 
+.stage-arrow{
+    position:absolute;
 
-        /* =====================================================
-           TIME SYMBOL
-        ===================================================== */
+    top:50%;
 
-        .darshan-symbol {
+    transform:translateY(-50%);
 
-            width: 48px;
+    z-index:20;
 
-            height: 48px;
+    width:48px;
+    height:48px;
 
-            display: flex;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-            align-items: center;
+    border:
+        1px solid
+        rgba(227,194,122,.55);
 
-            justify-content: center;
+    background:
+        rgba(35,22,21,.70);
 
-            border-radius: 50%;
+    color:#f5d68f;
 
-            border:
-                1px solid
-                rgba(180,138,69,.55);
+    font-size:1.2rem;
 
-            color:
-                var(--gold);
+    cursor:pointer;
 
-            background:
-                #fff8e9;
+    transition:.22s ease;
+}
 
-            font-family:
-                Georgia,
-                serif;
+.stage-arrow:hover{
+    background:var(--maroon);
 
-            font-size: .9rem;
-        }
+    transform:
+        translateY(-50%)
+        scale(1.05);
+}
 
+.stage-arrow.left{
+    left:28px;
+}
 
-        .darshan-name {
+.stage-arrow.right{
+    right:28px;
+}
 
-            color:
-                var(--maroon);
 
-            font-size: .92rem;
+/* Swaroop caption */
 
-            font-weight: 600;
-        }
+.stage-caption{
+    position:absolute;
 
+    left:50%;
+    bottom:62px;
 
-        .darshan-description {
+    transform:translateX(-50%);
 
-            margin-top: 4px;
+    z-index:14;
 
-            color:
-                var(--muted);
+    color:#fff4d7;
 
-            font-family:
-                Arial,
-                sans-serif;
+    font-size:.9rem;
 
-            font-size: .6rem;
-        }
+    white-space:nowrap;
 
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.8);
+}
 
-        .darshan-time {
 
-            color:
-                var(--brown);
+/* =========================================================
+   SWAROOP DOTS
+========================================================= */
 
-            font-family:
-                Arial,
-                sans-serif;
+.swaroop-dots{
+    position:absolute;
 
-            font-size: .67rem;
+    left:50%;
+    bottom:10px;
 
-            font-weight: 600;
+    transform:translateX(-50%);
 
-            white-space: nowrap;
-        }
+    z-index:20;
 
+    display:flex;
 
-        /* =====================================================
-           STATUS
-        ===================================================== */
+    gap:6px;
+}
 
-        .status {
+.swaroop-dot{
+    width:6px;
+    height:6px;
 
-            display: inline-flex;
+    border-radius:50%;
 
-            align-items: center;
+    border:0;
 
-            gap: 5px;
+    background:
+        rgba(255,235,190,.42);
 
-            margin-top: 5px;
+    cursor:pointer;
 
-            color:
-                var(--green);
+    padding:0;
+}
 
-            font-family:
-                Arial,
-                sans-serif;
+.swaroop-dot.active{
+    width:18px;
 
-            font-size: .56rem;
+    border-radius:5px;
 
-            font-weight: 600;
+    background:var(--light-gold);
+}
 
-            text-transform: uppercase;
 
-            letter-spacing: .5px;
-        }
+/* =========================================================
+   SIDE INFORMATION
+========================================================= */
 
+.side-column{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
 
-        .status-dot {
 
-            width: 6px;
+/* Information card */
 
-            height: 6px;
+.info-card{
+    position:relative;
 
-            border-radius: 50%;
+    padding:25px;
 
-            background:
-                #477a51;
-        }
+    background:var(--cream);
 
+    border:
+        1px solid
+        rgba(128,91,42,.28);
 
-        /* =====================================================
-           NOTE
-        ===================================================== */
+    box-shadow:
+        0 9px 26px rgba(74,45,18,.09);
 
-        .ritual-note {
+    overflow:hidden;
+}
 
-            margin-top: 18px;
+.info-card::after{
+    content:"";
 
-            padding: 13px 16px;
+    position:absolute;
 
-            background:
-                rgba(180,138,69,.08);
+    width:180px;
+    height:180px;
 
-            border-left:
-                3px solid
-                var(--gold);
+    right:-80px;
+    bottom:-80px;
 
-            color:
-                var(--muted);
+    background:
+        url("assets/lotus-1.png")
+        center/contain no-repeat;
 
-            font-family:
-                Arial,
-                sans-serif;
+    opacity:.055;
 
-            font-size: .64rem;
+    pointer-events:none;
+}
 
-            line-height: 1.6;
-        }
+.info-eyebrow{
+    color:var(--gold);
 
+    font-family:Arial,sans-serif;
 
-        /* =====================================================
-           DARSHAN GALLERY PREVIEW
-        ===================================================== */
+    font-size:.57rem;
+    font-weight:700;
 
-        .gallery-section {
+    letter-spacing:2px;
 
-            margin-top: 35px;
-        }
+    text-transform:uppercase;
+}
 
+.info-title{
+    margin-top:7px;
 
-        .section-heading {
+    color:var(--maroon);
 
-            display: flex;
+    font-size:1.35rem;
 
-            align-items: center;
+    font-weight:500;
+}
 
-            gap: 13px;
+.info-text{
+    margin-top:9px;
 
-            color:
-                var(--maroon);
+    color:var(--muted);
 
-            font-size:
-                1.35rem;
+    font-family:Arial,sans-serif;
 
-            font-weight: 500;
-        }
+    font-size:.66rem;
 
+    line-height:1.7;
+}
 
-        .section-heading::after {
 
-            content: "";
+/* =========================================================
+   SWAROOP SWITCHER
+========================================================= */
 
-            flex: 1;
+.swaroop-switcher{
+    display:grid;
 
-            height: 1px;
+    grid-template-columns:
+        repeat(2,1fr);
 
-            background:
-                var(--line);
-        }
+    gap:10px;
 
+    margin-top:18px;
+}
 
-        .gallery-grid {
+.switch-button{
+    position:relative;
 
-            margin-top: 15px;
+    min-height:45px;
 
-            display: grid;
+    border:
+        1px solid
+        rgba(180,138,69,.42);
 
-            grid-template-columns:
-                repeat(
-                    4,
-                    1fr
-                );
+    background:#f2e7d0;
 
-            gap: 12px;
-        }
+    color:var(--maroon);
 
+    font-family:Georgia,serif;
 
-        .gallery-card {
+    font-size:.66rem;
 
-            position: relative;
+    cursor:pointer;
 
-            height: 210px;
+    transition:.2s ease;
+}
 
-            overflow: hidden;
+.switch-button:hover,
+.switch-button.active{
+    background:var(--maroon);
 
-            border-radius: 11px;
+    color:#fff1d0;
 
-            background:
-                var(--peacock);
+    border-color:var(--maroon);
+}
 
-            border:
-                1px solid
-                var(--line);
-        }
 
+/* =========================================================
+   DARSHAN TIMINGS
+========================================================= */
 
-        .gallery-card img {
+.timings-card{
+    padding:25px;
 
-            width: 100%;
+    background:
+        linear-gradient(
+            145deg,
+            #fffaf0,
+            #f2e5ca
+        );
 
-            height: 100%;
+    border:
+        1px solid
+        rgba(128,91,42,.28);
 
-            object-fit: cover;
+    box-shadow:
+        0 9px 26px rgba(74,45,18,.08);
+}
 
-            transition:
-                transform .35s ease;
-        }
+.card-heading{
+    display:flex;
 
+    align-items:center;
 
-        .gallery-card:hover img {
+    justify-content:space-between;
 
-            transform:
-                scale(1.04);
-        }
+    margin-bottom:16px;
+}
 
+.card-heading h3{
+    color:var(--maroon);
 
-        .gallery-number {
+    font-size:1.1rem;
 
-            position: absolute;
+    font-weight:500;
+}
 
-            left: 10px;
+.card-heading span{
+    color:var(--gold);
 
-            bottom: 10px;
+    font-family:Arial,sans-serif;
 
-            padding:
-                5px 9px;
+    font-size:.55rem;
 
-            background:
-                rgba(25,20,17,.75);
+    letter-spacing:1px;
+}
 
-            color:
-                #f1d28d;
 
-            font-family:
-                Arial,
-                sans-serif;
+/* Timing rows */
 
-            font-size: .56rem;
+.time-row{
+    display:grid;
 
-            border:
-                1px solid
-                rgba(227,194,122,.45);
-        }
+    grid-template-columns:
+        1fr auto;
 
+    gap:12px;
 
-        /* =====================================================
-           FOOTER
-        ===================================================== */
+    align-items:center;
 
-        footer {
+    padding:11px 10px;
 
-            position: relative;
+    border-bottom:
+        1px solid
+        rgba(128,91,42,.12);
+}
 
-            padding:
-                32px 20px;
+.time-row:last-child{
+    border-bottom:0;
+}
 
-            text-align: center;
+.time-name{
+    color:var(--brown);
 
-            background:
-                var(--deep-maroon);
+    font-size:.76rem;
 
-            color:
-                rgba(255,242,211,.7);
-        }
+    font-weight:600;
+}
 
+.time-desc{
+    margin-top:3px;
 
-        .footer-name {
+    color:var(--muted);
 
-            color:
-                var(--light-gold);
+    font-family:Arial,sans-serif;
 
-            font-size: .9rem;
+    font-size:.52rem;
+}
 
-            margin-bottom: 7px;
-        }
+.time-value{
+    color:var(--maroon);
 
+    font-family:Arial,sans-serif;
 
-        .footer-mantra {
+    font-size:.58rem;
 
-            font-family:
-                "Noto Serif Devanagari",
-                "Nirmala UI",
-                "Mangal",
-                serif;
+    font-weight:700;
 
-            font-size: .7rem;
+    white-space:nowrap;
+}
 
-            letter-spacing: 2px;
-        }
 
+/* =========================================================
+   GALLERY
+========================================================= */
 
-        /* =====================================================
-           TABLET
-        ===================================================== */
+.gallery-section{
+    margin-top:48px;
+}
 
-        @media (max-width: 850px) {
+.section-heading{
+    display:flex;
 
-            .darshan-grid {
+    align-items:center;
 
-                grid-template-columns:
-                    1fr;
-            }
+    gap:14px;
 
+    color:var(--maroon);
 
-            .gallery-grid {
+    font-size:1.45rem;
 
-                grid-template-columns:
-                    repeat(
-                        2,
-                        1fr
-                    );
-            }
+    font-weight:500;
+}
 
-        }
+.section-heading::before{
+    content:"✦";
 
+    color:var(--gold);
 
-        /* =====================================================
-           MOBILE
-        ===================================================== */
+    font-size:.7rem;
+}
 
-        @media (max-width: 520px) {
+.section-heading::after{
+    content:"";
 
-            .top-strip {
+    flex:1;
 
-                height: 36px;
+    height:1px;
 
-                font-size: .63rem;
-            }
+    background:
+        linear-gradient(
+            to right,
+            var(--line),
+            transparent
+        );
+}
 
+.gallery-intro{
+    margin-top:7px;
 
-            .header {
+    color:var(--muted);
 
-                min-height: 200px;
-            }
+    font-family:Arial,sans-serif;
 
+    font-size:.63rem;
+}
 
-            .header-logo {
 
-                width: 62px;
-            }
+/* Gallery groups */
 
+.gallery-groups{
+    margin-top:20px;
 
-            .header-title {
+    display:grid;
 
-                font-size: 1.3rem;
-            }
+    grid-template-columns:
+        1fr 1fr;
 
+    gap:24px;
+}
 
-            .header-location {
+.gallery-group{
+    padding:20px;
 
-                font-size: .55rem;
+    background:var(--cream);
 
-                letter-spacing: 3px;
-            }
+    border:
+        1px solid
+        rgba(128,91,42,.25);
 
+    box-shadow:
+        0 8px 24px rgba(74,45,18,.07);
+}
 
-            .border-image {
+.gallery-group-title{
+    color:var(--maroon);
 
-                height: 28px;
-            }
+    font-size:1rem;
 
+    font-weight:500;
 
-            .container {
+    margin-bottom:15px;
+}
 
-                width: 92%;
+.gallery-grid{
+    display:grid;
 
-                padding-top: 20px;
-            }
+    grid-template-columns:
+        repeat(4,1fr);
 
+    gap:10px;
+}
 
-            .today-card {
+.gallery-card{
+    position:relative;
 
-                padding: 18px;
-            }
+    height:170px;
 
+    overflow:hidden;
 
-            .darshan-item {
+    background:#173c5b;
 
-                grid-template-columns:
-                    45px 1fr;
+    border:
+        3px solid
+        #d1ae67;
 
-                gap: 11px;
-            }
+    outline:
+        1px solid
+        rgba(100,29,41,.25);
+}
 
+.gallery-card img{
+    width:100%;
+    height:100%;
 
-            .darshan-symbol {
+    object-fit:cover;
 
-                width: 40px;
+    transition:
+        transform .35s ease;
+}
 
-                height: 40px;
-            }
+.gallery-card:hover img{
+    transform:scale(1.05);
+}
 
+.gallery-label{
+    position:absolute;
 
-            .darshan-time {
+    left:5px;
+    right:5px;
+    bottom:5px;
 
-                grid-column: 2;
+    padding:6px 5px;
 
-                margin-top: -5px;
-            }
+    text-align:center;
 
+    color:#f4d38d;
 
-            .gallery-grid {
+    background:
+        rgba(25,20,17,.75);
 
-                grid-template-columns:
-                    repeat(
-                        2,
-                        1fr
-                    );
-            }
+    font-family:Arial,sans-serif;
 
+    font-size:.47rem;
 
-            .gallery-card {
+    letter-spacing:.7px;
+}
 
-                height: 145px;
-            }
 
-        }
+/* =========================================================
+   BOTTOM PICHWAI
+========================================================= */
 
-    </style>
+.bottom-art{
+    position:relative;
 
+    height:150px;
+
+    margin-top:48px;
+
+    overflow:hidden;
+
+    background:#214c47;
+
+    border-top:
+        1px solid
+        rgba(180,138,69,.45);
+
+    border-bottom:
+        1px solid
+        rgba(180,138,69,.45);
+}
+
+.bottom-border{
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:.9;
+}
+
+.bottom-lotus{
+    position:absolute;
+
+    bottom:-55px;
+
+    width:160px;
+
+    opacity:.8;
+}
+
+.bottom-lotus.left{
+    left:4%;
+}
+
+.bottom-lotus.right{
+    right:4%;
+
+    transform:scaleX(-1);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:
+        36px 20px 28px;
+
+    text-align:center;
+
+    background:var(--deep-maroon);
+
+    color:
+        rgba(255,242,211,.72);
+}
+
+.footer-name{
+    color:var(--light-gold);
+
+    font-size:.94rem;
+
+    margin-bottom:8px;
+}
+
+.footer-mantra{
+    font-family:
+        "Noto Serif Devanagari",
+        "Nirmala UI",
+        "Mangal",
+        serif;
+
+    font-size:.7rem;
+
+    letter-spacing:2px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1000px){
+
+    .darshan-layout{
+        grid-template-columns:1fr;
+    }
+
+    .swaroop-stage{
+        min-height:620px;
+    }
+
+    .gallery-groups{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-card{
+        height:210px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .top-strip{
+        height:38px;
+
+        font-size:.64rem;
+
+        letter-spacing:1.3px;
+    }
+
+
+    .haveli-nav{
+        min-height:65px;
+
+        padding:
+            6px 12px;
+    }
+
+
+    .nav-brand{
+        min-width:auto;
+
+        gap:8px;
+    }
+
+    .nav-brand img{
+        width:45px;
+        height:45px;
+    }
+
+    .nav-haveli-name{
+        font-size:.7rem;
+    }
+
+    .nav-location{
+        font-size:.38rem;
+
+        letter-spacing:2px;
+    }
+
+    .nav-page{
+        display:none;
+    }
+
+    .nav-back{
+        padding:
+            7px 10px;
+
+        font-size:.49rem;
+    }
+
+
+    .hero{
+        height:350px;
+    }
+
+    .hero-bg{
+        content:
+            url("assets/Desktoppichwai-mobile.webp.webp");
+    }
+
+    .hero-logo{
+        width:90px;
+    }
+
+    .hero-title{
+        font-size:1.7rem;
+
+        margin-top:13px;
+    }
+
+    .hero-location{
+        font-size:.52rem;
+
+        letter-spacing:3px;
+    }
+
+    .hero-mantra{
+        font-size:.64rem;
+    }
+
+    .hero-lotus{
+        width:120px;
+
+        bottom:-45px;
+    }
+
+
+    .border-image{
+        height:32px;
+    }
+
+
+    .container{
+        width:92%;
+
+        padding:
+            25px 0 50px;
+    }
+
+
+    .intro{
+        margin-bottom:25px;
+    }
+
+    .intro h2{
+        font-size:1.65rem;
+    }
+
+    .intro p{
+        font-size:.63rem;
+    }
+
+
+    .swaroop-stage{
+        min-height:
+            500px;
+    }
+
+    .stage-title{
+        top:26px;
+
+        font-size:.5rem;
+
+        letter-spacing:2px;
+    }
+
+    .main-swaroop{
+        height:72%;
+
+        max-width:76%;
+
+        top:52%;
+    }
+
+    .stage-arrow{
+        width:38px;
+        height:38px;
+
+        font-size:.95rem;
+    }
+
+    .stage-arrow.left{
+        left:20px;
+    }
+
+    .stage-arrow.right{
+        right:20px;
+    }
+
+    .stage-caption{
+        bottom:60px;
+
+        font-size:.75rem;
+    }
+
+    .image-counter{
+        bottom:28px;
+
+        font-size:.48rem;
+    }
+
+
+    .gallery-groups{
+        gap:15px;
+    }
+
+    .gallery-group{
+        padding:14px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:8px;
+    }
+
+    .gallery-card{
+        height:175px;
+
+        border-width:2px;
+    }
+
+    .gallery-label{
+        font-size:.42rem;
+    }
+
+
+    .bottom-art{
+        height:105px;
+    }
+
+    .bottom-lotus{
+        width:100px;
+
+        bottom:-35px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media(max-width:380px){
+
+    .nav-haveli-name{
+        font-size:.62rem;
+    }
+
+    .nav-back{
+        padding:
+            6px 8px;
+
+        font-size:.44rem;
+    }
+
+    .hero{
+        height:330px;
+    }
+
+    .hero-title{
+        font-size:1.48rem;
+    }
+
+    .swaroop-stage{
+        min-height:460px;
+    }
+
+    .main-swaroop{
+        height:69%;
+        max-width:80%;
+    }
+
+    .stage-arrow{
+        width:34px;
+        height:34px;
+    }
+
+}
+</style>
 </head>
 
 
 <body>
 
 
-    <!-- =====================================================
-         DEVOTIONAL TOP
-    ===================================================== -->
+<!-- =========================================================
+     DEVOTIONAL STRIP
+========================================================= -->
 
-    <div class="top-strip">
+<div class="top-strip">
+    || श्री द्वारकेशो जयति ||
+</div>
 
-        || श्री द्वारकेशो जयति ||
 
+<!-- =========================================================
+     STICKY HAVElI NAVIGATION
+========================================================= -->
+
+<nav class="haveli-nav">
+
+    <a
+        href="dashboard.html"
+        class="nav-brand"
+    >
+
+        <img
+            src="assets/haveli-logo.png"
+            alt="Shri Dwarkadhishji Ni Haveli"
+        >
+
+        <div class="nav-brand-text">
+
+            <span class="nav-haveli-name">
+                Shri Dwarkadhishji Ni Haveli
+            </span>
+
+            <span class="nav-location">
+                CHOPDA
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <div class="nav-page">
+        DARSHAN
     </div>
 
 
-    <!-- =====================================================
-         HEADER
-    ===================================================== -->
+    <a
+        href="dashboard.html"
+        class="nav-back"
+    >
+        ← Haveli
+    </a>
 
-    <header class="header">
+</nav>
 
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero">
+
+    <img
+        class="hero-bg"
+        src="assets/Desktoppichwai-desktop.webp.webp"
+        alt=""
+    >
+
+    <div class="hero-overlay"></div>
+
+
+    <img
+        class="hero-lotus left"
+        src="assets/lotus-1.png"
+        alt=""
+        aria-hidden="true"
+    >
+
+    <img
+        class="hero-lotus right"
+        src="assets/lotus-1.png"
+        alt=""
+        aria-hidden="true"
+    >
+
+
+    <div class="hero-content">
 
         <img
-            class="header-bg"
-            src="assets/Desktoppichwai-desktop.webp.webp"
+            class="hero-logo"
+            src="assets/haveli-logo.png"
+            alt="Shri Dwarkadhishji Ni Haveli"
+        >
+
+        <h1 class="hero-title">
+            Darshan
+        </h1>
+
+        <div class="hero-location">
+            SHRI DWARKADHISHJI NI HAVELI · CHOPDA
+        </div>
+
+        <div class="hero-mantra">
+            श्री द्वारकाधीशजी नी हवेली
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     TOP PICHWAI BORDER
+========================================================= -->
+
+<img
+    class="border-image"
+    src="assets/Borders/Horizontal/HorizontalLotusandPeacockForTopOfTheScreen.png"
+    alt=""
+    aria-hidden="true"
+>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="container">
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section class="intro">
+
+        <h2>
+            Today's Darshan
+        </h2>
+
+        <div class="intro-divider">
+            <span>✦</span>
+        </div>
+
+        <p>
+            Daily darshan and seva timings of
+            Shri Dwarkadhishji and Shri Balkrishnalalji.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         DARSHAN EXPERIENCE
+    ====================================================== -->
+
+    <section class="darshan-layout">
+
+
+        <!-- =================================================
+             SWAROOP STAGE
+        ================================================== -->
+
+        <div class="swaroop-stage">
+
+
+            <img
+                class="stage-bg"
+                src="assets/Desktoppichwai-desktop.webp.webp"
+                alt=""
+                aria-hidden="true"
+            >
+
+
+            <div class="stage-title">
+                Shri Dwarkadhishji · Darshan Swaroop
+            </div>
+
+
+            <button
+                class="stage-arrow left"
+                id="previousSwaroop"
+                aria-label="Previous Swaroop"
+                type="button"
+            >
+                ‹
+            </button>
+
+
+            <img
+                id="mainSwaroop"
+                class="main-swaroop"
+                src="assets/Dwarkadhish/1.jpeg"
+                alt="Shri Dwarkadhishji"
+            >
+
+
+            <button
+                class="stage-arrow right"
+                id="nextSwaroop"
+                aria-label="Next Swaroop"
+                type="button"
+            >
+                ›
+            </button>
+
+
+            <div
+                id="stageCaption"
+                class="stage-caption"
+            >
+                Shri Dwarkadhishji
+            </div>
+
+
+            <div
+                id="imageCounter"
+                class="image-counter"
+            >
+                SWAROOP 01 / 08
+            </div>
+
+
+            <div
+                id="swaroopDots"
+                class="swaroop-dots"
+            ></div>
+
+        </div>
+
+
+        <!-- =================================================
+             SIDE COLUMN
+        ================================================== -->
+
+        <aside class="side-column">
+
+
+            <!-- =============================================
+                 ABOUT DARSHAN
+            ============================================== -->
+
+            <section class="info-card">
+
+                <div class="info-eyebrow">
+                    Daily Seva
+                </div>
+
+                <h3 class="info-title">
+                    Darshan Seva
+                </h3>
+
+                <p class="info-text">
+                    The sacred daily rhythm of the Haveli,
+                    presented with the Swaroop and seva
+                    timings together in one place.
+                </p>
+
+
+                <div class="swaroop-switcher">
+
+                    <button
+                        class="switch-button active"
+                        id="dwarkadhishSwitch"
+                        type="button"
+                    >
+                        Dwarkadhishji
+                    </button>
+
+                    <button
+                        class="switch-button"
+                        id="balkrishnalalSwitch"
+                        type="button"
+                    >
+                        Balkrishnalalji
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 TIMINGS
+            ============================================== -->
+
+            <section class="timings-card">
+
+                <div class="card-heading">
+
+                    <h3>
+                        Darshan Timings
+                    </h3>
+
+                    <span>
+                        DAILY
+                    </span>
+
+                </div>
+
+
+                <div class="time-row">
+
+                    <div>
+                        <div class="time-name">
+                            Mangla
+                        </div>
+
+                        <div class="time-desc">
+                            Mangla Darshan
+                        </div>
+                    </div>
+
+                    <div class="time-value">
+                        8:00 – 9:00 AM
+                    </div>
+
+                </div>
+
+
+                <div class="time-row">
+
+                    <div>
+                        <div class="time-name">
+                            Shringar
+                        </div>
+
+                        <div class="time-desc">
+                            Shringar Darshan
+                        </div>
+                    </div>
+
+                    <div class="time-value">
+                        10:00 – 10:30 AM
+                    </div>
+
+                </div>
+
+
+                <div class="time-row">
+
+                    <div>
+                        <div class="time-name">
+                            Rajbhog
+                        </div>
+
+                        <div class="time-desc">
+                            Rajbhog Darshan
+                        </div>
+                    </div>
+
+                    <div class="time-value">
+                        11:00 – 11:30 AM
+                    </div>
+
+                </div>
+
+
+                <div class="time-row">
+
+                    <div>
+                        <div class="time-name">
+                            Utthapan
+                        </div>
+
+                        <div class="time-desc">
+                            Utthapan Darshan
+                        </div>
+                    </div>
+
+                    <div class="time-value">
+                        4:35 – 4:40 PM
+                    </div>
+
+                </div>
+
+
+                <div class="time-row">
+
+                    <div>
+                        <div class="time-name">
+                            Bhog Sandhya
+                        </div>
+
+                        <div class="time-desc">
+                            Sandhya Bhog
+                        </div>
+                    </div>
+
+                    <div class="time-value">
+                        5:00 – 5:30 PM
+                    </div>
+
+                </div>
+
+
+                <div class="time-row">
+
+                    <div>
+                        <div class="time-name">
+                            Shayan
+                        </div>
+
+                        <div class="time-desc">
+                            Shayan Darshan
+                        </div>
+                    </div>
+
+                    <div class="time-value">
+                        6:00 – 6:30 PM
+                    </div>
+
+                </div>
+
+            </section>
+
+        </aside>
+
+    </section>
+
+
+    <!-- =====================================================
+         GALLERY
+    ====================================================== -->
+
+    <section class="gallery-section">
+
+        <h2 class="section-heading">
+            Darshan Gallery
+        </h2>
+
+        <p class="gallery-intro">
+            Swaroop collection of Shri Dwarkadhishji
+            and Shri Balkrishnalalji.
+        </p>
+
+
+        <div class="gallery-groups">
+
+
+            <!-- =============================================
+                 DWARKADHISH
+            ============================================== -->
+
+            <section class="gallery-group">
+
+                <h3 class="gallery-group-title">
+                    Shri Dwarkadhishji
+                </h3>
+
+
+                <div class="gallery-grid">
+
+
+                    <div class="gallery-card">
+                        <img
+                            src="assets/Dwarkadhish/1.jpeg"
+                            alt="Shri Dwarkadhishji Swaroop 1"
+                        >
+                        <div class="gallery-label">
+                            Dwarkadhishji · 01
+                        </div>
+                    </div>
+
+
+                    <div class="gallery-card">
+                        <img
+                            src="assets/Dwarkadhish/2.jpeg"
+                            alt="Shri Dwarkadhishji Swaroop 2"
+                        >
+                        <div class="gallery-label">
+                            Dwarkadhishji · 02
+                        </div>
+                    </div>
+
+
+                    <div class="gallery-card">
+                        <img
+                            src="assets/Dwarkadhish/3.jpeg"
+                            alt="Shri Dwarkadhishji Swaroop 3"
+                        >
+                        <div class="gallery-label">
+                            Dwarkadhishji · 03
+                        </div>
+                    </div>
+
+
+                    <div class="gallery-card">
+                        <img
+                            src="assets/Dwarkadhish/4.jpeg"
+                            alt="Shri Dwarkadhishji Swaroop 4"
+                        >
+                        <div class="gallery-label">
+                            Dwarkadhishji · 04
+                        </div>
+                    </div>
+
+
+                    <div class="gallery-card">
+                        <img
+                            src="assets/Dwarkadhish/5.jpeg"
+                            alt="Shri Dwarkadhishji Swaroop 5"
+                        >
+                        <div class="gallery-label">
+                            Dwarkadhishji · 05
+                        </div>
+                    </div>
+
+
+                    <div class="gallery-card">
+                        <img
+                            src="assets/Dwarkadhish/6.jpeg"
+                            alt="Shri Dwarkadhishji Swaroop 6"
+                        >
+                        <div class="gallery-label">
+                            Dwarkadhishji · 06
+                        </div>
+                    </div>
+
+
+                    <div class="gallery-card">
+                        <img
+                            src="assets/Dwarkadhish/7.jpeg"
+                            alt="Shri Dwarkadhishji Swaroop 7"
+                        >
+                        <div class="gallery-label">
+                            Dwarkadhishji · 07
+                        </div>
+                    </div>
+
+
+                    <div class="gallery-card">
+                        <img
+                            src="assets/Dwarkadhish/8.jpeg"
+                            alt="Shri Dwarkadhishji Swaroop 8"
+                        >
+                        <div class="gallery-label">
+                            Dwarkadhishji · 08
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 BALKRISHNALAL
+            ============================================== -->
+
+            <section class="gallery-group">
+
+                <h3 class="gallery-group-title">
+                    Shri Balkrishnalalji
+                </h3>
+
+
+                <div class="gallery-grid">
+
+
+                    <div class="gallery-card">
+                        <img
+                            src="assets/Balkrishnalal/1.jpeg"
+                            alt="Shri Balkrishnalalji Swaroop 1"
+                        >
+                        <div class="gallery-label">
+                            Balkrishnalalji · 01
+                        </div>
+                    </div>
+
+
+                    <div class="gallery-card">
+                        <img
+                            src="assets/Balkrishnalal/2.jpeg"
+                            alt="Shri Balkrishnalalji Swaroop 2"
+                        >
+                        <div class="gallery-label">
+                            Balkrishnalalji · 02
+                        </div>
+                    </div>
+
+
+                    <div class="gallery-card">
+                        <img
+                            src="assets/Balkrishnalal/3.jpeg"
+                            alt="Shri Balkrishnalalji Swaroop 3"
+                        >
+                        <div class="gallery-label">
+                            Balkrishnalalji · 03
+                        </div>
+                    </div>
+
+
+                    <div class="gallery-card">
+                        <img
+                            src="assets/Balkrishnalal/4.jpeg"
+                            alt="Shri Balkrishnalalji Swaroop 4"
+                        >
+                        <div class="gallery-label">
+                            Balkrishnalalji · 04
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BOTTOM ART
+    ====================================================== -->
+
+    <section class="bottom-art">
+
+        <img
+            class="bottom-border"
+            src="assets/Borders/Horizontal/HorizontalRoyalLotusBorderForBottomSideOfScreen.png"
             alt=""
             aria-hidden="true"
         >
 
-
-        <div class="header-overlay"></div>
-
-
-        <div class="header-content">
-
-
-            <img
-                class="header-logo"
-                src="assets/haveli-logo.png"
-                alt="Shri Dwarkadhishji Ni Haveli"
-            >
-
-
-            <h1 class="header-title">
-
-                Darshan
-
-            </h1>
-
-
-            <div class="header-location">
-
-                SHRI DWARKADHISHJI NI HAVELI · CHOPDA
-
-            </div>
-
-
-        </div>
-
-
-    </header>
-
-
-    <!-- =====================================================
-         BORDER
-    ===================================================== -->
-
-    <img
-        class="border-image"
-        src="assets/Borders/Horizontal/HorizontalLotusandPeacockForTopOfTheScreen.png"
-        alt=""
-        aria-hidden="true"
-    >
-
-
-    <!-- =====================================================
-         CONTENT
-    ===================================================== -->
-
-    <main class="container">
-
-
-        <!-- Back -->
-
-        <a
-            class="back"
-            href="dashboard.html"
+        <img
+            class="bottom-lotus left"
+            src="assets/lotus-1.png"
+            alt=""
+            aria-hidden="true"
         >
 
-            ← Back to Haveli
+        <img
+            class="bottom-lotus right"
+            src="assets/lotus-1.png"
+            alt=""
+            aria-hidden="true"
+        >
 
-        </a>
+    </section>
 
+</main>
 
-        <!-- Intro -->
 
-        <section class="intro">
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
+<footer>
 
-            <h1>
+    <div class="footer-name">
+        Shri Dwarkadhishji Ni Haveli · Chopda
+    </div>
 
-                Today's Darshan
+    <div class="footer-mantra">
+        || जय श्री कृष्ण ||
+    </div>
 
-            </h1>
+</footer>
 
 
-            <p>
+<script>
 
-                The daily darshan schedule of
-                Shri Dwarkadhishji and
-                Balkrishnalalji.
+/* =========================================================
+   SWAROOP DATA
+========================================================= */
 
-            </p>
+const swaroops = {
 
+    Dwarkadhishji: [
+        "assets/Dwarkadhish/1.jpeg",
+        "assets/Dwarkadhish/2.jpeg",
+        "assets/Dwarkadhish/3.jpeg",
+        "assets/Dwarkadhish/4.jpeg",
+        "assets/Dwarkadhish/5.jpeg",
+        "assets/Dwarkadhish/6.jpeg",
+        "assets/Dwarkadhish/7.jpeg",
+        "assets/Dwarkadhish/8.jpeg"
+    ],
 
-        </section>
+    Balkrishnalalji: [
+        "assets/Balkrishnalal/1.jpeg",
+        "assets/Balkrishnalal/2.jpeg",
+        "assets/Balkrishnalal/3.jpeg",
+        "assets/Balkrishnalal/4.jpeg"
+    ]
 
+};
 
-        <!-- =================================================
-             TIMINGS
-        ================================================= -->
 
-        <section class="today-card">
+/* =========================================================
+   STATE
+========================================================= */
 
+let currentSwaroop = "Dwarkadhishji";
 
-            <h2 class="today-title">
+let currentIndex = 0;
 
-                Darshan Timings
 
-            </h2>
+/* =========================================================
+   ELEMENTS
+========================================================= */
 
+const mainSwaroop =
+    document.getElementById("mainSwaroop");
 
-            <div class="today-date">
+const stageCaption =
+    document.getElementById("stageCaption");
 
-                Daily Seva Schedule
+const imageCounter =
+    document.getElementById("imageCounter");
 
-            </div>
+const swaroopDots =
+    document.getElementById("swaroopDots");
 
+const previousButton =
+    document.getElementById("previousSwaroop");
 
-            <div class="darshan-grid">
+const nextButton =
+    document.getElementById("nextSwaroop");
 
+const dwarkadhishSwitch =
+    document.getElementById("dwarkadhishSwitch");
 
-                <!-- Mangla -->
+const balkrishnalalSwitch =
+    document.getElementById("balkrishnalalSwitch");
 
-                <article class="darshan-item">
 
+/* =========================================================
+   PRELOAD ALL IMAGES
+========================================================= */
 
-                    <div class="darshan-symbol">
-                        M
-                    </div>
+Object.values(swaroops)
+    .flat()
+    .forEach(function(src){
 
+        const image =
+            new Image();
 
-                    <div>
+        image.src = src;
 
-                        <div class="darshan-name">
-                            Mangla
-                        </div>
+    });
 
-                        <div class="darshan-description">
-                            Mangla Darshan
-                        </div>
 
-                        <div class="status">
-                            <span class="status-dot"></span>
-                            Daily
-                        </div>
+/* =========================================================
+   CREATE DOTS
+========================================================= */
 
-                    </div>
+function createDots(){
 
+    swaroopDots.innerHTML = "";
 
-                    <div class="darshan-time">
+    swaroops[currentSwaroop]
+        .forEach(function(_,index){
 
-                        8:00 AM – 9:00 AM
+            const dot =
+                document.createElement("button");
 
-                    </div>
+            dot.type = "button";
 
+            dot.className =
+                "swaroop-dot";
 
-                </article>
+            dot.setAttribute(
+                "aria-label",
+                "Show Swaroop " + (index + 1)
+            );
 
+            dot.addEventListener(
+                "click",
+                function(){
 
-                <!-- Shringar -->
+                    currentIndex = index;
 
-                <article class="darshan-item">
+                    showSwaroop();
 
+                }
+            );
 
-                    <div class="darshan-symbol">
-                        S
-                    </div>
+            swaroopDots.appendChild(dot);
 
+        });
 
-                    <div>
+}
 
-                        <div class="darshan-name">
-                            Shringar
-                        </div>
 
-                        <div class="darshan-description">
-                            Shringar Darshan
-                        </div>
+/* =========================================================
+   UPDATE DOTS
+========================================================= */
 
-                        <div class="status">
-                            <span class="status-dot"></span>
-                            Daily
-                        </div>
+function updateDots(){
 
-                    </div>
+    const dots =
+        swaroopDots.querySelectorAll(
+            ".swaroop-dot"
+        );
 
+    dots.forEach(function(dot,index){
 
-                    <div class="darshan-time">
+        dot.classList.toggle(
+            "active",
+            index === currentIndex
+        );
 
-                        10:00 AM – 10:30 AM
+    });
 
-                    </div>
+}
 
 
-                </article>
+/* =========================================================
+   SHOW SWAROOP
+========================================================= */
 
+function showSwaroop(){
 
-                <!-- Rajbhog -->
+    const images =
+        swaroops[currentSwaroop];
 
-                <article class="darshan-item">
+    if(!images.length){
+        return;
+    }
 
 
-                    <div class="darshan-symbol">
-                        R
-                    </div>
+    mainSwaroop.style.opacity = "0";
 
 
-                    <div>
+    setTimeout(function(){
 
-                        <div class="darshan-name">
-                            Rajbhog
-                        </div>
+        mainSwaroop.src =
+            images[currentIndex];
 
-                        <div class="darshan-description">
-                            Rajbhog Darshan
-                        </div>
+        mainSwaroop.alt =
+            "Shri " +
+            currentSwaroop +
+            " Swaroop " +
+            (currentIndex + 1);
 
-                        <div class="status">
-                            <span class="status-dot"></span>
-                            Daily
-                        </div>
 
-                    </div>
+        stageCaption.textContent =
+            "Shri " +
+            currentSwaroop;
 
 
-                    <div class="darshan-time">
+        imageCounter.textContent =
+            "SWAROOP " +
+            String(currentIndex + 1)
+                .padStart(2,"0")
+            +
+            " / " +
+            String(images.length)
+                .padStart(2,"0");
 
-                        11:00 AM – 11:30 AM
 
-                    </div>
+        mainSwaroop.style.opacity =
+            "1";
 
 
-                </article>
+        updateDots();
 
+    },180);
 
-                <!-- Utthapan -->
+}
 
-                <article class="darshan-item">
 
+/* =========================================================
+   NEXT
+========================================================= */
 
-                    <div class="darshan-symbol">
-                        U
-                    </div>
+nextButton.addEventListener(
+    "click",
+    function(){
 
+        currentIndex++;
 
-                    <div>
+        if(
+            currentIndex >=
+            swaroops[currentSwaroop].length
+        ){
 
-                        <div class="darshan-name">
-                            Utthapan
-                        </div>
+            currentIndex = 0;
 
-                        <div class="darshan-description">
-                            Utthapan Darshan
-                        </div>
+        }
 
-                        <div class="status">
-                            <span class="status-dot"></span>
-                            Daily
-                        </div>
+        showSwaroop();
 
-                    </div>
+    }
+);
 
 
-                    <div class="darshan-time">
+/* =========================================================
+   PREVIOUS
+========================================================= */
 
-                        4:35 PM – 4:40 PM
+previousButton.addEventListener(
+    "click",
+    function(){
 
-                    </div>
+        currentIndex--;
 
+        if(currentIndex < 0){
 
-                </article>
+            currentIndex =
+                swaroops[currentSwaroop].length - 1;
 
+        }
 
-                <!-- Bhog Sandhya -->
+        showSwaroop();
 
-                <article class="darshan-item">
+    }
+);
 
 
-                    <div class="darshan-symbol">
-                        B
-                    </div>
+/* =========================================================
+   CHANGE SWAROOP
+========================================================= */
 
+function changeSwaroop(name){
 
-                    <div>
+    currentSwaroop = name;
 
-                        <div class="darshan-name">
-                            Bhog Sandhya
-                        </div>
+    currentIndex = 0;
 
-                        <div class="darshan-description">
-                            Sandhya Bhog Darshan
-                        </div>
+    dwarkadhishSwitch
+        .classList.toggle(
+            "active",
+            name === "Dwarkadhishji"
+        );
 
-                        <div class="status">
-                            <span class="status-dot"></span>
-                            Daily
-                        </div>
+    balkrishnalalSwitch
+        .classList.toggle(
+            "active",
+            name === "Balkrishnalalji"
+        );
 
-                    </div>
+    createDots();
 
+    showSwaroop();
 
-                    <div class="darshan-time">
+}
 
-                        5:00 PM – 5:30 PM
 
-                    </div>
+/* =========================================================
+   SWITCH BUTTONS
+========================================================= */
 
+dwarkadhishSwitch.addEventListener(
+    "click",
+    function(){
 
-                </article>
+        changeSwaroop(
+            "Dwarkadhishji"
+        );
 
+    }
+);
 
-                <!-- Shayan -->
 
-                <article class="darshan-item">
+balkrishnalalSwitch.addEventListener(
+    "click",
+    function(){
 
+        changeSwaroop(
+            "Balkrishnalalji"
+        );
 
-                    <div class="darshan-symbol">
-                        Sh
-                    </div>
+    }
+);
 
 
-                    <div>
+/* =========================================================
+   AUTO SLIDESHOW
+========================================================= */
 
-                        <div class="darshan-name">
-                            Shayan
-                        </div>
+let slideshowTimer =
+    setInterval(
+        function(){
 
-                        <div class="darshan-description">
-                            Shayan Darshan
-                        </div>
+            currentIndex++;
 
-                        <div class="status">
-                            <span class="status-dot"></span>
-                            Daily
-                        </div>
+            if(
+                currentIndex >=
+                swaroops[currentSwaroop].length
+            ){
 
-                    </div>
+                currentIndex = 0;
 
+            }
 
-                    <div class="darshan-time">
+            showSwaroop();
 
-                        6:00 PM – 6:30 PM
+        },
+        7000
+    );
 
-                    </div>
 
+/* =========================================================
+   PAUSE AUTO SLIDESHOW WHILE INTERACTING
+========================================================= */
 
-                </article>
+function restartSlideshow(){
 
+    clearInterval(
+        slideshowTimer
+    );
 
-            </div>
+    slideshowTimer =
+        setInterval(
+            function(){
 
+                currentIndex++;
 
-            <!-- Ritual note -->
+                if(
+                    currentIndex >=
+                    swaroops[currentSwaroop].length
+                ){
 
-            <div class="ritual-note">
+                    currentIndex = 0;
 
-                <strong>Note:</strong>
-                Timings may vary according to the
-                daily rituals. Utthapan Darshan may
-                occasionally open in Bhitar according
-                to the Haveli's seva arrangements.
+                }
 
-            </div>
+                showSwaroop();
 
+            },
+            7000
+        );
 
-        </section>
+}
 
 
-        <!-- =================================================
-             DARSHAN GALLERY
-        ================================================= -->
+previousButton.addEventListener(
+    "click",
+    restartSlideshow
+);
 
-        <section class="gallery-section">
+nextButton.addEventListener(
+    "click",
+    restartSlideshow
+);
 
+dwarkadhishSwitch.addEventListener(
+    "click",
+    restartSlideshow
+);
 
-            <h2 class="section-heading">
+balkrishnalalSwitch.addEventListener(
+    "click",
+    restartSlideshow
+);
 
-                Darshan Gallery
 
-            </h2>
+/* =========================================================
+   KEYBOARD NAVIGATION
+========================================================= */
 
+document.addEventListener(
+    "keydown",
+    function(event){
 
-            <div class="gallery-grid">
+        if(event.key === "ArrowRight"){
 
+            currentIndex++;
 
-                <div class="gallery-card">
+            if(
+                currentIndex >=
+                swaroops[currentSwaroop].length
+            ){
 
-                    <img
-                        src="assets/Dwarkadhish/1.jpeg"
-                        alt="Shri Dwarkadhishji"
-                    >
+                currentIndex = 0;
 
-                    <div class="gallery-number">
-                        Dwarkadhishji · 01
-                    </div>
+            }
 
-                </div>
+            showSwaroop();
 
+            restartSlideshow();
 
-                <div class="gallery-card">
+        }
 
-                    <img
-                        src="assets/Dwarkadhish/2.jpeg"
-                        alt="Shri Dwarkadhishji"
-                    >
 
-                    <div class="gallery-number">
-                        Dwarkadhishji · 02
-                    </div>
+        if(event.key === "ArrowLeft"){
 
-                </div>
+            currentIndex--;
 
+            if(currentIndex < 0){
 
-                <div class="gallery-card">
+                currentIndex =
+                    swaroops[currentSwaroop].length - 1;
 
-                    <img
-                        src="assets/Balkrishnalal/1.jpeg"
-                        alt="Shri Balkrishnalalji"
-                    >
+            }
 
-                    <div class="gallery-number">
-                        Balkrishnalalji · 01
-                    </div>
+            showSwaroop();
 
-                </div>
+            restartSlideshow();
 
+        }
 
-                <div class="gallery-card">
+    }
+);
 
-                    <img
-                        src="assets/Balkrishnalal/2.jpeg"
-                        alt="Shri Balkrishnalalji"
-                    >
 
-                    <div class="gallery-number">
-                        Balkrishnalalji · 02
-                    </div>
+/* =========================================================
+   TOUCH SWIPE
+========================================================= */
 
-                </div>
+let touchStartX = 0;
 
+let touchEndX = 0;
 
-            </div>
 
+mainSwaroop.addEventListener(
+    "touchstart",
+    function(event){
 
-        </section>
+        touchStartX =
+            event.changedTouches[0].screenX;
 
+    },
+    {passive:true}
+);
 
-    </main>
 
+mainSwaroop.addEventListener(
+    "touchend",
+    function(event){
 
-    <!-- =====================================================
-         BOTTOM BORDER
-    ===================================================== -->
+        touchEndX =
+            event.changedTouches[0].screenX;
 
-    <img
-        class="border-image"
-        src="assets/Borders/Horizontal/HorizontalRoyalLotusBorderForBottomSideOfScreen.png"
-        alt=""
-        aria-hidden="true"
-    >
+        const difference =
+            touchStartX - touchEndX;
 
 
-    <!-- =====================================================
-         FOOTER
-    ===================================================== -->
+        if(Math.abs(difference) < 45){
+            return;
+        }
 
-    <footer>
 
+        if(difference > 0){
 
-        <div class="footer-name">
+            currentIndex++;
 
-            Shri Dwarkadhishji Ni Haveli
+            if(
+                currentIndex >=
+                swaroops[currentSwaroop].length
+            ){
 
-        </div>
+                currentIndex = 0;
 
+            }
 
-        <div class="footer-mantra">
+        }else{
 
-            || जय श्री कृष्ण ||
+            currentIndex--;
 
-        </div>
+            if(currentIndex < 0){
 
+                currentIndex =
+                    swaroops[currentSwaroop].length - 1;
 
-    </footer>
+            }
 
+        }
+
+
+        showSwaroop();
+
+        restartSlideshow();
+
+    },
+    {passive:true}
+);
+
+
+/* =========================================================
+   INITIALISE
+========================================================= */
+
+createDots();
+
+showSwaroop();
+
+</script>
 
 </body>
-
 </html>
