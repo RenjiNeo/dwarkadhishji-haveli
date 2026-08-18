@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#42131d"
+    >
+
+    <title>
+        Darshan | Shri Dwarkadhishji Ni Haveli
+    </title>
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            background:
+                #f5edda;
+
+            color:
+                #39251d;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            overflow-x:
+                hidden;
+        }
+
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+
+            --ivory: #f5edda;
+            --cream: #fffaf0;
+            --maroon: #641d29;
+            --deep-maroon: #42131d;
+            --green: #315846;
+            --peacock: #174c61;
+            --gold: #b48a45;
+            --light-gold: #e3c27a;
+            --brown: #563b29;
+            --muted: #786650;
+            --line: rgba(128, 91, 42, .28);
+        }
+
+
+        /* =====================================================
+           TOP BAR
+        ===================================================== */
+
+        .top-strip {
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                var(--deep-maroon);
+
+            color:
+                var(--light-gold);
+
+            font-family:
+                "Noto Serif Devanagari",
+                "Nirmala UI",
+                "Mangal",
+                serif;
+
+            font-size: .78rem;
+
+            letter-spacing: 2px;
+
+            border-bottom:
+                1px solid
+                rgba(227,194,122,.45);
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .header {
+
+            position: relative;
+
+            min-height: 230px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            background:
+                #173c4d;
+        }
+
+
+        .header-bg {
+
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            opacity: .65;
+        }
+
+
+        .header-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(20,30,32,.18),
+                    rgba(20,30,32,.72)
+                );
+        }
+
+
+        .header-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            color: #fff2d4;
+
+            padding: 25px;
+        }
+
+
+        .header-logo {
+
+            width: 75px;
+
+            filter:
+                drop-shadow(
+                    0 5px 13px
+                    rgba(0,0,0,.55)
+                );
+        }
+
+
+        .header-title {
+
+            margin-top: 10px;
+
+            font-size:
+                clamp(
+                    1.35rem,
+                    3vw,
+                    2.3rem
+                );
+
+            font-weight: 500;
+
+            text-shadow:
+                0 3px 14px
+                rgba(0,0,0,.8);
+        }
+
+
+        .header-location {
+
+            margin-top: 7px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: .62rem;
+
+            letter-spacing: 5px;
+
+            color: var(--light-gold);
+        }
+
+
+        /* =====================================================
+           BORDER
+        ===================================================== */
+
+        .border-image {
+
+            width: 100%;
+
+            height: 42px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        /* =====================================================
+           CONTENT
+        ===================================================== */
+
+        .container {
+
+            width:
+                min(
+                    1250px,
+                    92%
+                );
+
+            margin:
+                0 auto;
+
+            padding:
+                28px 0 60px;
+        }
+
+
+        /* =====================================================
+           BACK BUTTON
+        ===================================================== */
+
+        .back {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color:
+                var(--maroon);
+
+            text-decoration: none;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: .7rem;
+
+            font-weight: 600;
+
+            letter-spacing: .5px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .back:hover {
+            color: var(--gold);
+        }
+
+
+        /* =====================================================
+           PAGE INTRO
+        ===================================================== */
+
+        .intro {
+
+            text-align: center;
+
+            max-width: 750px;
+
+            margin:
+                0 auto 30px;
+        }
+
+
+        .intro h1 {
+
+            color:
+                var(--maroon);
+
+            font-size:
+                clamp(
+                    1.7rem,
+                    3vw,
+                    2.5rem
+                );
+
+            font-weight: 500;
+        }
+
+
+        .intro p {
+
+            margin-top: 10px;
+
+            color:
+                var(--muted);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: .74rem;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           TODAY CARD
+        ===================================================== */
+
+        .today-card {
+
+            position: relative;
+
+            padding: 28px;
+
+            background:
+                var(--cream);
+
+            border:
+                1px solid
+                var(--line);
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 7px 25px
+                rgba(74,45,18,.09);
+
+            overflow: hidden;
+        }
+
+
+        .today-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+
+            height: 220px;
+
+            right: -70px;
+
+            bottom: -90px;
+
+            background-image:
+                url(
+                    "assets/lotus-1.png"
+                );
+
+            background-size: contain;
+
+            background-repeat: no-repeat;
+
+            opacity: .08;
+
+            pointer-events: none;
+        }
+
+
+        .today-title {
+
+            color:
+                var(--maroon);
+
+            font-size: 1.3rem;
+
+            font-weight: 500;
+        }
+
+
+        .today-date {
+
+            margin-top: 5px;
+
+            color:
+                var(--muted);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: .67rem;
+        }
+
+
+        /* =====================================================
+           DARSHAN GRID
+        ===================================================== */
+
+        .darshan-grid {
+
+            margin-top: 22px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    1fr
+                );
+
+            gap: 12px;
+        }
+
+
+        .darshan-item {
+
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns:
+                55px 1fr auto;
+
+            align-items: center;
+
+            gap: 15px;
+
+            min-height: 90px;
+
+            padding: 13px 16px;
+
+            background:
+                #f3ead6;
+
+            border:
+                1px solid
+                rgba(128,91,42,.18);
+
+            border-radius: 10px;
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+        }
+
+
+        .darshan-item:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 6px 16px
+                rgba(74,45,18,.09);
+        }
+
+
+        /* =====================================================
+           TIME SYMBOL
+        ===================================================== */
+
+        .darshan-symbol {
+
+            width: 48px;
+
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(180,138,69,.55);
+
+            color:
+                var(--gold);
+
+            background:
+                #fff8e9;
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: .9rem;
+        }
+
+
+        .darshan-name {
+
+            color:
+                var(--maroon);
+
+            font-size: .92rem;
+
+            font-weight: 600;
+        }
+
+
+        .darshan-description {
+
+            margin-top: 4px;
+
+            color:
+                var(--muted);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: .6rem;
+        }
+
+
+        .darshan-time {
+
+            color:
+                var(--brown);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: .67rem;
+
+            font-weight: 600;
+
+            white-space: nowrap;
+        }
+
+
+        /* =====================================================
+           STATUS
+        ===================================================== */
+
+        .status {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            margin-top: 5px;
+
+            color:
+                var(--green);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: .56rem;
+
+            font-weight: 600;
+
+            text-transform: uppercase;
+
+            letter-spacing: .5px;
+        }
+
+
+        .status-dot {
+
+            width: 6px;
+
+            height: 6px;
+
+            border-radius: 50%;
+
+            background:
+                #477a51;
+        }
+
+
+        /* =====================================================
+           NOTE
+        ===================================================== */
+
+        .ritual-note {
+
+            margin-top: 18px;
+
+            padding: 13px 16px;
+
+            background:
+                rgba(180,138,69,.08);
+
+            border-left:
+                3px solid
+                var(--gold);
+
+            color:
+                var(--muted);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: .64rem;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           DARSHAN GALLERY PREVIEW
+        ===================================================== */
+
+        .gallery-section {
+
+            margin-top: 35px;
+        }
+
+
+        .section-heading {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            color:
+                var(--maroon);
+
+            font-size:
+                1.35rem;
+
+            font-weight: 500;
+        }
+
+
+        .section-heading::after {
+
+            content: "";
+
+            flex: 1;
+
+            height: 1px;
+
+            background:
+                var(--line);
+        }
+
+
+        .gallery-grid {
+
+            margin-top: 15px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    4,
+                    1fr
+                );
+
+            gap: 12px;
+        }
+
+
+        .gallery-card {
+
+            position: relative;
+
+            height: 210px;
+
+            overflow: hidden;
+
+            border-radius: 11px;
+
+            background:
+                var(--peacock);
+
+            border:
+                1px solid
+                var(--line);
+        }
+
+
+        .gallery-card img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform .35s ease;
+        }
+
+
+        .gallery-card:hover img {
+
+            transform:
+                scale(1.04);
+        }
+
+
+        .gallery-number {
+
+            position: absolute;
+
+            left: 10px;
+
+            bottom: 10px;
+
+            padding:
+                5px 9px;
+
+            background:
+                rgba(25,20,17,.75);
+
+            color:
+                #f1d28d;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: .56rem;
+
+            border:
+                1px solid
+                rgba(227,194,122,.45);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            position: relative;
+
+            padding:
+                32px 20px;
+
+            text-align: center;
+
+            background:
+                var(--deep-maroon);
+
+            color:
+                rgba(255,242,211,.7);
+        }
+
+
+        .footer-name {
+
+            color:
+                var(--light-gold);
+
+            font-size: .9rem;
+
+            margin-bottom: 7px;
+        }
+
+
+        .footer-mantra {
+
+            font-family:
+                "Noto Serif Devanagari",
+                "Nirmala UI",
+                "Mangal",
+                serif;
+
+            font-size: .7rem;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .darshan-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .gallery-grid {
+
+                grid-template-columns:
+                    repeat(
+                        2,
+                        1fr
+                    );
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 520px) {
+
+            .top-strip {
+
+                height: 36px;
+
+                font-size: .63rem;
+            }
+
+
+            .header {
+
+                min-height: 200px;
+            }
+
+
+            .header-logo {
+
+                width: 62px;
+            }
+
+
+            .header-title {
+
+                font-size: 1.3rem;
+            }
+
+
+            .header-location {
+
+                font-size: .55rem;
+
+                letter-spacing: 3px;
+            }
+
+
+            .border-image {
+
+                height: 28px;
+            }
+
+
+            .container {
+
+                width: 92%;
+
+                padding-top: 20px;
+            }
+
+
+            .today-card {
+
+                padding: 18px;
+            }
+
+
+            .darshan-item {
+
+                grid-template-columns:
+                    45px 1fr;
+
+                gap: 11px;
+            }
+
+
+            .darshan-symbol {
+
+                width: 40px;
+
+                height: 40px;
+            }
+
+
+            .darshan-time {
+
+                grid-column: 2;
+
+                margin-top: -5px;
+            }
+
+
+            .gallery-grid {
+
+                grid-template-columns:
+                    repeat(
+                        2,
+                        1fr
+                    );
+            }
+
+
+            .gallery-card {
+
+                height: 145px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         DEVOTIONAL TOP
+    ===================================================== -->
+
+    <div class="top-strip">
+
+        || श्री द्वारकेशो जयति ||
+
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="header">
+
+
+        <img
+            class="header-bg"
+            src="assets/Desktoppichwai-desktop.webp.webp"
+            alt=""
+            aria-hidden="true"
+        >
+
+
+        <div class="header-overlay"></div>
+
+
+        <div class="header-content">
+
+
+            <img
+                class="header-logo"
+                src="assets/haveli-logo.png"
+                alt="Shri Dwarkadhishji Ni Haveli"
+            >
+
+
+            <h1 class="header-title">
+
+                Darshan
+
+            </h1>
+
+
+            <div class="header-location">
+
+                SHRI DWARKADHISHJI NI HAVELI · CHOPDA
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+
+    <!-- =====================================================
+         BORDER
+    ===================================================== -->
+
+    <img
+        class="border-image"
+        src="assets/Borders/Horizontal/HorizontalLotusandPeacockForTopOfTheScreen.png"
+        alt=""
+        aria-hidden="true"
+    >
+
+
+    <!-- =====================================================
+         CONTENT
+    ===================================================== -->
+
+    <main class="container">
+
+
+        <!-- Back -->
+
+        <a
+            class="back"
+            href="dashboard.html"
+        >
+
+            ← Back to Haveli
+
+        </a>
+
+
+        <!-- Intro -->
+
+        <section class="intro">
+
+
+            <h1>
+
+                Today's Darshan
+
+            </h1>
+
+
+            <p>
+
+                The daily darshan schedule of
+                Shri Dwarkadhishji and
+                Balkrishnalalji.
+
+            </p>
+
+
+        </section>
+
+
+        <!-- =================================================
+             TIMINGS
+        ================================================= -->
+
+        <section class="today-card">
+
+
+            <h2 class="today-title">
+
+                Darshan Timings
+
+            </h2>
+
+
+            <div class="today-date">
+
+                Daily Seva Schedule
+
+            </div>
+
+
+            <div class="darshan-grid">
+
+
+                <!-- Mangla -->
+
+                <article class="darshan-item">
+
+
+                    <div class="darshan-symbol">
+                        M
+                    </div>
+
+
+                    <div>
+
+                        <div class="darshan-name">
+                            Mangla
+                        </div>
+
+                        <div class="darshan-description">
+                            Mangla Darshan
+                        </div>
+
+                        <div class="status">
+                            <span class="status-dot"></span>
+                            Daily
+                        </div>
+
+                    </div>
+
+
+                    <div class="darshan-time">
+
+                        8:00 AM – 9:00 AM
+
+                    </div>
+
+
+                </article>
+
+
+                <!-- Shringar -->
+
+                <article class="darshan-item">
+
+
+                    <div class="darshan-symbol">
+                        S
+                    </div>
+
+
+                    <div>
+
+                        <div class="darshan-name">
+                            Shringar
+                        </div>
+
+                        <div class="darshan-description">
+                            Shringar Darshan
+                        </div>
+
+                        <div class="status">
+                            <span class="status-dot"></span>
+                            Daily
+                        </div>
+
+                    </div>
+
+
+                    <div class="darshan-time">
+
+                        10:00 AM – 10:30 AM
+
+                    </div>
+
+
+                </article>
+
+
+                <!-- Rajbhog -->
+
+                <article class="darshan-item">
+
+
+                    <div class="darshan-symbol">
+                        R
+                    </div>
+
+
+                    <div>
+
+                        <div class="darshan-name">
+                            Rajbhog
+                        </div>
+
+                        <div class="darshan-description">
+                            Rajbhog Darshan
+                        </div>
+
+                        <div class="status">
+                            <span class="status-dot"></span>
+                            Daily
+                        </div>
+
+                    </div>
+
+
+                    <div class="darshan-time">
+
+                        11:00 AM – 11:30 AM
+
+                    </div>
+
+
+                </article>
+
+
+                <!-- Utthapan -->
+
+                <article class="darshan-item">
+
+
+                    <div class="darshan-symbol">
+                        U
+                    </div>
+
+
+                    <div>
+
+                        <div class="darshan-name">
+                            Utthapan
+                        </div>
+
+                        <div class="darshan-description">
+                            Utthapan Darshan
+                        </div>
+
+                        <div class="status">
+                            <span class="status-dot"></span>
+                            Daily
+                        </div>
+
+                    </div>
+
+
+                    <div class="darshan-time">
+
+                        4:35 PM – 4:40 PM
+
+                    </div>
+
+
+                </article>
+
+
+                <!-- Bhog Sandhya -->
+
+                <article class="darshan-item">
+
+
+                    <div class="darshan-symbol">
+                        B
+                    </div>
+
+
+                    <div>
+
+                        <div class="darshan-name">
+                            Bhog Sandhya
+                        </div>
+
+                        <div class="darshan-description">
+                            Sandhya Bhog Darshan
+                        </div>
+
+                        <div class="status">
+                            <span class="status-dot"></span>
+                            Daily
+                        </div>
+
+                    </div>
+
+
+                    <div class="darshan-time">
+
+                        5:00 PM – 5:30 PM
+
+                    </div>
+
+
+                </article>
+
+
+                <!-- Shayan -->
+
+                <article class="darshan-item">
+
+
+                    <div class="darshan-symbol">
+                        Sh
+                    </div>
+
+
+                    <div>
+
+                        <div class="darshan-name">
+                            Shayan
+                        </div>
+
+                        <div class="darshan-description">
+                            Shayan Darshan
+                        </div>
+
+                        <div class="status">
+                            <span class="status-dot"></span>
+                            Daily
+                        </div>
+
+                    </div>
+
+
+                    <div class="darshan-time">
+
+                        6:00 PM – 6:30 PM
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+            <!-- Ritual note -->
+
+            <div class="ritual-note">
+
+                <strong>Note:</strong>
+                Timings may vary according to the
+                daily rituals. Utthapan Darshan may
+                occasionally open in Bhitar according
+                to the Haveli's seva arrangements.
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             DARSHAN GALLERY
+        ================================================= -->
+
+        <section class="gallery-section">
+
+
+            <h2 class="section-heading">
+
+                Darshan Gallery
+
+            </h2>
+
+
+            <div class="gallery-grid">
+
+
+                <div class="gallery-card">
+
+                    <img
+                        src="assets/Dwarkadhish/1.jpeg"
+                        alt="Shri Dwarkadhishji"
+                    >
+
+                    <div class="gallery-number">
+                        Dwarkadhishji · 01
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-card">
+
+                    <img
+                        src="assets/Dwarkadhish/2.jpeg"
+                        alt="Shri Dwarkadhishji"
+                    >
+
+                    <div class="gallery-number">
+                        Dwarkadhishji · 02
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-card">
+
+                    <img
+                        src="assets/Balkrishnalal/1.jpeg"
+                        alt="Shri Balkrishnalalji"
+                    >
+
+                    <div class="gallery-number">
+                        Balkrishnalalji · 01
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-card">
+
+                    <img
+                        src="assets/Balkrishnalal/2.jpeg"
+                        alt="Shri Balkrishnalalji"
+                    >
+
+                    <div class="gallery-number">
+                        Balkrishnalalji · 02
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         BOTTOM BORDER
+    ===================================================== -->
+
+    <img
+        class="border-image"
+        src="assets/Borders/Horizontal/HorizontalRoyalLotusBorderForBottomSideOfScreen.png"
+        alt=""
+        aria-hidden="true"
+    >
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+
+        <div class="footer-name">
+
+            Shri Dwarkadhishji Ni Haveli
+
+        </div>
+
+
+        <div class="footer-mantra">
+
+            || जय श्री कृष्ण ||
+
+        </div>
+
+
+    </footer>
+
+
+</body>
+
+</html>
